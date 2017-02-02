@@ -1,2 +1,0 @@
-# Hotel
-Hotel project repository
