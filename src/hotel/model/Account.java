@@ -6,7 +6,10 @@ public class Account{
 
     private long id;
     private double cost;
-    private Date paymentDate;    
+    private Date paymentDate;
+    
+    
+    //
     private long idGuest;
     private long idIndividual;
     private long idLegalEntity;
