@@ -7,7 +7,7 @@ public class Guest{
     private long id;
     private Date arrivalDate;
     private Date departureDate;
-    private int additionalSpace;
+    private boolean additionalSpace;
     private long idIndividual;
     private long idHotelRoom;    
 
@@ -15,7 +15,7 @@ public class Guest{
 	
     }
 
-    public Guest(long id, Date arrivalDate, Date departureDate, int additionalSpace, long idIndividual, long idHotelRoom){
+    public Guest(long id, Date arrivalDate, Date departureDate, boolean additionalSpace, long idIndividual, long idHotelRoom){
 	this.id = id;
 	this.arrivalDate = arrivalDate;
 	this.departureDate = departureDate;
@@ -48,11 +48,11 @@ public class Guest{
 	this.departureDate = departureDate;
     }
     
-    public long getAdditionalSpace(){
+    public boolean getAdditionalSpace(){
 	return additionalSpace;
     }
     
-    public void setAdditionalSpace(int additionalSpace){
+    public void setAdditionalSpace(boolean additionalSpace){
 	this.additionalSpace = additionalSpace;
     }
     
