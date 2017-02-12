@@ -1,8 +1,6 @@
 package hotel.dao.impl;
 
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -16,11 +14,7 @@ public class Test{
     private String url;
     private String user;
     private String password;
-    
-    //private static final String url = "jdbc:mysql://db4free.net:3307/hotel_project";
-    //private static final String user = "hotel_admin";
-    //private static final String password = "139746852";
- 
+     
     private static Connection con;
     private static Statement stmt;
     private static ResultSet rs;
