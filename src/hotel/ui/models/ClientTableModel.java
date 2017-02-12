@@ -1,10 +1,10 @@
-package models;
+package hotel.ui.models;
 
 import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import object_protytypes.Client;
+import hotel.ui.object_protytypes.Client;
 
 public class ClientTableModel extends AbstractTableModel {
 

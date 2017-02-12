@@ -1,4 +1,4 @@
-package ui_windows;
+package hotel.ui.ui_windows;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -17,9 +17,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 
-import models.BookingInfoModel;
-import object_protytypes.BookingInfoItem;
-import object_protytypes.BookingInfoItemColl;
+import hotel.ui.models.BookingInfoModel;
+import hotel.ui.object_protytypes.BookingInfoItem;
+import hotel.ui.object_protytypes.BookingInfoItemColl;
 
 /***
  * Форма для перевірки броні за прізвищем фіз. особи

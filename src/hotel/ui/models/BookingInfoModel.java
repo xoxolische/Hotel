@@ -1,10 +1,10 @@
-package models;
+package hotel.ui.models;
 
 import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import object_protytypes.BookingInfoItem;
+import hotel.ui.object_protytypes.BookingInfoItem;
 
 
 public class BookingInfoModel extends AbstractTableModel {

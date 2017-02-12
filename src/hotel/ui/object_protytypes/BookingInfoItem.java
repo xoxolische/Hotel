@@ -1,4 +1,4 @@
-package object_protytypes;
+package hotel.ui.object_protytypes;
 /*
  * Прототип заброньованого номера, дані якого
  * відображаються в таблиці інтерфейсу

@@ -1,4 +1,4 @@
-package ui_windows;
+package hotel.ui.ui_windows;
 
 
 import java.awt.GridBagConstraints;
@@ -18,17 +18,17 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 
-import object_protytypes.BookedNumber;
-import object_protytypes.BookedNumsColl;
-import object_protytypes.BookingInfoItem;
-import object_protytypes.BookingInfoItemColl;
-import object_protytypes.Client;
-import object_protytypes.ClientColl;
-import object_protytypes.FreeSoonNumsColl;
-import object_protytypes.SearchNumResColl;
-import models.BookingInfoModel;
-import models.ClientTableModel;
-import models.NumberTableModel;
+import hotel.ui.models.BookingInfoModel;
+import hotel.ui.models.ClientTableModel;
+import hotel.ui.models.NumberTableModel;
+import hotel.ui.object_protytypes.BookedNumber;
+import hotel.ui.object_protytypes.BookedNumsColl;
+import hotel.ui.object_protytypes.BookingInfoItem;
+import hotel.ui.object_protytypes.BookingInfoItemColl;
+import hotel.ui.object_protytypes.Client;
+import hotel.ui.object_protytypes.ClientColl;
+import hotel.ui.object_protytypes.FreeSoonNumsColl;
+import hotel.ui.object_protytypes.SearchNumResColl;
 
 /***
  * Основне вікно інтерфейсу з наступними вкладками:
