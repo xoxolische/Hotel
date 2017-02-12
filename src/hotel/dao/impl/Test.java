@@ -30,9 +30,6 @@ public class Test{
 	br.close();
     }
     
-    public String[] DB(){
-	return null;
-    }
     public static void main(String args[]) throws ClassNotFoundException, IOException {
 	
         String query = "select message from test where id=1";
