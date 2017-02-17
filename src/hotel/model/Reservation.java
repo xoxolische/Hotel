@@ -1,26 +1,26 @@
 package hotel.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Reservation{
 
-    private long id;
+    private int id;
     private Date bookingDate;
     private Date arrivalDate;
     private int days;
     private int persons;
     private Date bookingCancelationDate;
     private String cancelationReason;
-    private long idHotelRoom;
-    private long idLegalEntity;
-    private long idIndividual;
+    private int idHotelRoom;
+    private int idLegalEntity;
+    private int idIndividual;
     
     public Reservation(){
     }
 
-    public Reservation(long id, Date bookingDate, Date arrivalDate, int days,
+    public Reservation(int id, Date bookingDate, Date arrivalDate, int days,
 	    int persons, Date bookingCancelationDate, String cancelationReason,
-	    long idHotelRoom, long idLegalEntity, long idIndividual){
+	    int idHotelRoom, int idLegalEntity, int idIndividual){
 	this.id = id;
 	this.bookingDate = bookingDate;
 	this.arrivalDate = arrivalDate;
@@ -33,11 +33,11 @@ public class Reservation{
 	this.idIndividual = idIndividual;
     }
 
-    public long getId(){
+    public int getId(){
         return id;
     }
 
-    public void setId(long id){
+    public void setId(int id){
         this.id = id;
     }
 
@@ -89,27 +89,27 @@ public class Reservation{
         this.cancelationReason = cancelationReason;
     }
 
-    public long getIdHotelRoom(){
+    public int getIdHotelRoom(){
         return idHotelRoom;
     }
 
-    public void setIdHotelRoom(long idHotelRoom){
+    public void setIdHotelRoom(int idHotelRoom){
         this.idHotelRoom = idHotelRoom;
     }
 
-    public long getIdLegalEntity(){
+    public int getIdLegalEntity(){
         return idLegalEntity;
     }
 
-    public void setIdLegalEntity(long idLegalEntity){
+    public void setIdLegalEntity(int idLegalEntity){
         this.idLegalEntity = idLegalEntity;
     }
 
-    public long getIdIndividual(){
+    public int getIdIndividual(){
         return idIndividual;
     }
 
-    public void setIdIndividual(long idIndividual){
+    public void setIdIndividual(int idIndividual){
         this.idIndividual = idIndividual;
     }
 

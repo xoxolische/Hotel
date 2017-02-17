@@ -1,20 +1,20 @@
 package hotel.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Service{
     
-    private long id;
+    private int id;
     private Date date;
     private int quantity;
-    private long idGuest;
-    private long idPriceList;
+    private int idGuest;
+    private int idPriceList;
 
     public Service(){
     }
 
-    public Service(long id, Date date, int quantity, long idGuest,
-	    long idPriceList){
+    public Service(int id, Date date, int quantity, int idGuest,
+	    int idPriceList){
 	this.id = id;
 	this.date = date;
 	this.quantity = quantity;
@@ -22,11 +22,11 @@ public class Service{
 	this.idPriceList = idPriceList;
     }
 
-    public long getId(){
+    public int getId(){
         return id;
     }
 
-    public void setId(long id){
+    public void setId(int id){
         this.id = id;
     }
 
@@ -46,19 +46,19 @@ public class Service{
         this.quantity = quantity;
     }
 
-    public long getIdGuest(){
+    public int getIdGuest(){
         return idGuest;
     }
 
-    public void setIdGuest(long idGuest){
+    public void setIdGuest(int idGuest){
         this.idGuest = idGuest;
     }
 
-    public long getIdPriceList(){
+    public int getIdPriceList(){
         return idPriceList;
     }
 
-    public void setIdPriceList(long idPriceList){
+    public void setIdPriceList(int idPriceList){
         this.idPriceList = idPriceList;
     }
 

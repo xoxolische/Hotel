@@ -2,18 +2,18 @@ package hotel.model;
 
 public class HotelRoom{
 
-    private long id;
+    private int id;
     private int number;
     private int rClass;
     private int capacity;
     private int floor;
-    private long idPriceList;
+    private int idPriceList;
     
     public HotelRoom(){
 	
     }
 
-    public HotelRoom(long id, int number, int rClass, int capacity, int floor, long idPriceList){
+    public HotelRoom(int id, int number, int rClass, int capacity, int floor, int idPriceList){
 	this.id = id;
 	this.number = number;
 	this.rClass = rClass;
@@ -22,11 +22,11 @@ public class HotelRoom{
 	this.idPriceList = idPriceList;
     }
 
-    public long getId(){
+    public int getId(){
         return id;
     }
 
-    public void setId(long id){
+    public void setId(int id){
         this.id = id;
     }
 
@@ -38,11 +38,11 @@ public class HotelRoom{
         this.number = number;
     }
 
-    public int getrClass(){
+    public int getRoomClass(){
         return rClass;
     }
 
-    public void setrClass(int rClass){
+    public void setRoomClass(int rClass){
         this.rClass = rClass;
     }
 
@@ -62,11 +62,11 @@ public class HotelRoom{
         this.floor = floor;
     }
 
-    public long getIdPriceList(){
+    public int getIdPriceList(){
         return idPriceList;
     }
 
-    public void setIdPriceList(long idPriceList){
+    public void setIdPriceList(int idPriceList){
         this.idPriceList = idPriceList;
     }
 

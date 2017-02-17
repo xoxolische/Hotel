@@ -2,7 +2,7 @@ package hotel.model;
 
 public class LegalEntity{
     
-    private long id;
+    private int id;
     private String name;
     private String kindOfBusiness;
     private String contactPersonName;
@@ -11,7 +11,7 @@ public class LegalEntity{
     public LegalEntity(){
     }
 
-    public LegalEntity(long id, String name, String kindOfBusiness,
+    public LegalEntity(int id, String name, String kindOfBusiness,
 	    String contactPersonName, String phoneNumber){
 	this.id = id;
 	this.name = name;
@@ -20,11 +20,11 @@ public class LegalEntity{
 	this.phoneNumber = phoneNumber;
     }
 
-    public long getId(){
+    public int getId(){
         return id;
     }
 
-    public void setId(long id){
+    public void setId(int id){
         this.id = id;
     }
 

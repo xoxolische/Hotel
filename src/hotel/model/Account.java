@@ -1,20 +1,20 @@
 package hotel.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Account{
 
-    private long id;
+    private int id;
     private double cost;
     private Date paymentDate;
-    private long idGuest;
-    private long idIndividual;
-    private long idLegalEntity;
+    private int idGuest;
+    private int idIndividual;
+    private int idLegalEntity;
     
     public Account(){
     }
     
-    public Account(long id, double cost, long idGuest, Date paymentDate, long idIndividual, long idLegalEntity){
+    public Account(int id, double cost, int idGuest, Date paymentDate, int idIndividual, int idLegalEntity){
 	this.id = id;
 	this.cost = cost;
 	this.idGuest = idGuest;
@@ -22,41 +22,41 @@ public class Account{
 	this.idIndividual = idIndividual;
 	this.idLegalEntity = idLegalEntity;
     }
-    public void setId(long id){
+    public void setId(int id){
 	this.id = id;
     }
     public void setCost(double cost){
 	this.cost = cost;
     }
-    public void setIdGuest(long idGuest){
+    public void setIdGuest(int idGuest){
 	this.idGuest = idGuest;
     }
     public void setPaymentDate(Date paymentDate){
 	this.paymentDate = paymentDate;
     }
-    public void setIdIndividual(long idIndividual){
+    public void setIdIndividual(int idIndividual){
 	this.idIndividual = idIndividual;
     }
-    public void setIdLegalEntity(long idLegalEntity){
+    public void setIdLegalEntity(int idLegalEntity){
 	this.idLegalEntity = idLegalEntity;
     }
     
-    public long getId(){
+    public int getId(){
 	return id;	
     }
     public double getCost(){
 	return cost;	
     }
-    public double getIdGuest(){
+    public int getIdGuest(){
 	return idGuest;	
     }
     public Date getPaymentDate(){
 	return paymentDate;	
     }
-    public long getIdIndividual(){
+    public int getIdIndividual(){
 	return idIndividual;	
     }
-    public long getIdLegalEntity(){
+    public int getIdLegalEntity(){
 	return idLegalEntity;	
     }  
     

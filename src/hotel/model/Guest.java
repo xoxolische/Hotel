@@ -1,21 +1,21 @@
 package hotel.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Guest{
     
-    private long id;
+    private int id;
     private Date arrivalDate;
     private Date departureDate;
     private boolean additionalSpace;
-    private long idIndividual;
-    private long idHotelRoom;    
+    private int idIndividual;
+    private int idHotelRoom;    
 
     public Guest(){
 	
     }
 
-    public Guest(long id, Date arrivalDate, Date departureDate, boolean additionalSpace, long idIndividual, long idHotelRoom){
+    public Guest(int id, Date arrivalDate, Date departureDate, boolean additionalSpace, int idIndividual, int idHotelRoom){
 	this.id = id;
 	this.arrivalDate = arrivalDate;
 	this.departureDate = departureDate;
@@ -24,11 +24,11 @@ public class Guest{
 	this.idHotelRoom = idHotelRoom;
     }
 
-    public long getId(){
+    public int getId(){
 	return id;
     }
     
-    public void setId(long id){
+    public void setId(int id){
 	this.id = id;
     }
     
@@ -56,19 +56,19 @@ public class Guest{
 	this.additionalSpace = additionalSpace;
     }
     
-    public long getIdIndividual(){
+    public int getIdIndividual(){
 	return idIndividual;
     }
     
-    public void setIdIndividual(long idIndividual){
+    public void setIdIndividual(int idIndividual){
 	this.idIndividual = idIndividual;
     }
     
-    public long getIdHotelRoom(){
+    public int getIdHotelRoom(){
 	return idHotelRoom;
     }
     
-    public void setIdHotelRoom(long idHotelRoom){
+    public void setIdHotelRoom(int idHotelRoom){
 	this.idHotelRoom = idHotelRoom;
     }
 }

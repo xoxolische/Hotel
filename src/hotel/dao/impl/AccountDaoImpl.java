@@ -1,0 +1,127 @@
+package hotel.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.util.ArrayList;
+import java.util.List;
+import hotel.dao.AccountDao;
+import hotel.model.Account;
+
+public class AccountDaoImpl implements AccountDao{
+    
+    private static final String SQL_ADD_ACCOUNT = null; 
+    private static final String SQL_DELETE_ACCOUNT = null;
+    private static final String SQL_GET_BY_ID_ACCOUNT = null;
+    private static final String SQL_ALL_ACCOUNTS = "SELECT * FROM account";
+    
+    private Connection con = new ConnectionFactory().getConnection();
+    private PreparedStatement prepared_stmt;    
+    
+    @Override
+    public void add(Account account){	
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_ADD_ACCOUNT);
+	    prepared_stmt.setDouble(1, account.getCost());	    
+	    if(account.getPaymentDate()!=null){
+		prepared_stmt.setDate(2, account.getPaymentDate());		
+	    }
+	    else{
+		prepared_stmt.setNull(2, Types.INTEGER);
+	    }
+	    prepared_stmt.setInt(3, account.getIdGuest());
+	    prepared_stmt.setInt(4, account.getIdIndividual());
+	    prepared_stmt.setInt(5, account.getIdLegalEntity());	    
+	    
+	    prepared_stmt.executeUpdate();	    
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+    }
+
+    @Override
+    public void delete(int id){
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_DELETE_ACCOUNT);
+	    prepared_stmt.setInt(1, id);
+	    prepared_stmt.executeUpdate();
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+    }
+
+    @Override
+    public Account getById(int id){
+	ResultSet res = null;
+	
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_GET_BY_ID_ACCOUNT);
+	    prepared_stmt.setInt(1, id);
+	    res = prepared_stmt.executeQuery();	    
+	    if(res.next()){
+		return getObj(res);
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	return null;
+    }
+
+    @Override
+    public List<Account> getAll(){
+	List<Account> list = new ArrayList<Account>();
+	ResultSet res = null;
+	
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_ALL_ACCOUNTS);
+	    res = prepared_stmt.executeQuery();
+	    while(res.next()){		
+		list.add(getObj(res));
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}	
+	
+	return list;
+    }
+    
+    private Account getObj(ResultSet result){
+	Account account = new Account();
+	try {
+	    account.setId(result.getInt(1));
+	    account.setCost(result.getDouble(2));
+	    account.setPaymentDate(result.getDate(3));
+	    account.setIdGuest(result.getInt(4));
+	    account.setIdIndividual(result.getInt(5));
+	    account.setIdLegalEntity(result.getInt(6));	    
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	return account;
+    }
+    
+    public static void main(String[] args){
+	AccountDaoImpl p = new AccountDaoImpl();
+	
+	//System.out.println(p.getById(4).getId());
+	   
+	
+	for(Account a : p.getAll()){
+	    System.out.println(a.getId());
+	    System.out.println(a.getCost());
+	    System.out.println(a.getPaymentDate());
+	    System.out.println(a.getIdGuest());
+	    System.out.println(a.getIdIndividual());
+	    System.out.println(a.getIdLegalEntity());
+	    System.out.println("_______");
+	    
+	}
+	/*
+	 
+	*/
+    }
+    
+
+}

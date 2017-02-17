@@ -2,7 +2,7 @@ package hotel.model;
 
 public class PriceList{
     
-    private long id;
+    private int id;
     private String name;
     private double price;
 
@@ -10,17 +10,17 @@ public class PriceList{
 	
     }
 
-    public PriceList(long id, String name, double price){
+    public PriceList(int id, String name, double price){
 	this.id = id;
 	this.name = name;
 	this.price = price;
     }
 
-    public long getId(){
+    public int getId(){
         return id;
     }
 
-    public void setId(long id){
+    public void setId(int id){
         this.id = id;
     }
 
