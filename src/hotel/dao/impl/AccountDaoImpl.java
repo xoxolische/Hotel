@@ -101,27 +101,4 @@ public class AccountDaoImpl implements AccountDao{
 	}
 	return account;
     }
-    
-    public static void main(String[] args){
-	AccountDaoImpl p = new AccountDaoImpl();
-	
-	//System.out.println(p.getById(4).getId());
-	   
-	
-	for(Account a : p.getAll()){
-	    System.out.println(a.getId());
-	    System.out.println(a.getCost());
-	    System.out.println(a.getPaymentDate());
-	    System.out.println(a.getIdGuest());
-	    System.out.println(a.getIdIndividual());
-	    System.out.println(a.getIdLegalEntity());
-	    System.out.println("_______");
-	    
-	}
-	/*
-	 
-	*/
-    }
-    
-
 }

@@ -1,5 +1,6 @@
 package hotel.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import hotel.model.HotelRoom;
@@ -13,4 +14,6 @@ public interface HotelRoomDao{
     HotelRoom getById(int id);
     
     List<HotelRoom> getAll();
+
+    ArrayList<HotelRoom> getBookedRooms();
 }

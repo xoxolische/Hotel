@@ -18,6 +18,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 
+import hotel.services.HotelRoomService;
+import hotel.services.impl.HotelRoomServiceImpl;
 import hotel.ui.models.BookingInfoModel;
 import hotel.ui.models.ClientTableModel;
 import hotel.ui.models.NumberTableModel;
@@ -112,6 +114,8 @@ public class MainWindow extends JFrame {
 	
 	public MainWindow() {
 		
+	    HotelRoomService hotelRoomService = new HotelRoomServiceImpl();
+	    
 		this.setLocation(100,100);
 		this.setSize(500,330);
 		this.setTitle("Головне вікно");
@@ -182,7 +186,11 @@ public class MainWindow extends JFrame {
 				
 				//System.out.println("Size: "+bookedNums.size());
 				
-				numsModel = new NumberTableModel(bookedNums);
+				//
+				numsModel = new NumberTableModel(hotelRoomService.bookedRooms());
+				//
+				
+				//numsModel = new NumberTableModel(bookedNums);
 				numsTable.setModel(numsModel);
 			}
 		});
@@ -205,6 +213,7 @@ public class MainWindow extends JFrame {
 				ArrayList<BookedNumber> freeNums = numsColl.getList();
 				
 				//System.out.println("Size: "+freeNums.size());
+				
 				
 				numsModel = new NumberTableModel(freeNums);
 				numsTable.setModel(numsModel);

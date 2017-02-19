@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
+import hotel.model.HotelRoom;
 import hotel.ui.object_protytypes.BookedNumber;
 
 
@@ -17,10 +18,10 @@ public class NumberTableModel extends AbstractTableModel {
 	
 	
 	//BookedNumber = NumberVO
-	ArrayList<BookedNumber> nums;
+	ArrayList<HotelRoom> nums;
 	
-	public NumberTableModel(ArrayList<BookedNumber> numbers) {
-		nums = numbers;
+	public NumberTableModel(ArrayList<HotelRoom> arrayList) {
+		nums = arrayList;
 	}
 	
 	@Override
@@ -36,12 +37,12 @@ public class NumberTableModel extends AbstractTableModel {
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		BookedNumber number = nums.get(rowIndex);
+		HotelRoom number = nums.get(rowIndex);
 		
 		switch (columnIndex) {
-			case 0: return number.getNumNo(); 
-			case 1: return number.getKlass(); 
-			case 2: return number.getPlaces();
+			case 0: return number.getNumber(); 
+			case 1: return number.getRoomClass(); 
+			case 2: return number.getCapacity();
 			case 3: return number.getFloor();
 			
 			default: return 0;

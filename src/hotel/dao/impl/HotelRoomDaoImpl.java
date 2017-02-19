@@ -20,6 +20,8 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 
     private static final String SQL_ALL_ROOMS = null;
 
+    private static final String SQL_ALL_BOOKED_ROOMS = "select * from hotel_room";
+
     private Connection con = new ConnectionFactory().getConnection();
     private PreparedStatement prepared_stmt; 
     
@@ -98,5 +100,23 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 	    e.printStackTrace();
 	}
 	return room;
+    }
+
+    @Override
+    public ArrayList<HotelRoom> getBookedRooms(){
+	ArrayList<HotelRoom> list = new ArrayList<HotelRoom>();
+	ResultSet res = null;
+	
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_ALL_BOOKED_ROOMS);
+	    res = prepared_stmt.executeQuery();
+	    while(res.next()){		
+		list.add(getObj(res));
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	
+	return list;
     }
 }
