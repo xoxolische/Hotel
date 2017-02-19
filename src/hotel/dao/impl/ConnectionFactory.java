@@ -12,7 +12,9 @@ public class ConnectionFactory{
     private String url;
     private String user;
     private String password;     
-    private Connection con;    
+    private Connection con; 
+    
+    public static final ConnectionFactory cf = new ConnectionFactory();
  
     public ConnectionFactory(){
 	try {

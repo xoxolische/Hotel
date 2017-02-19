@@ -22,7 +22,10 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 
     private static final String SQL_ALL_BOOKED_ROOMS = "select * from hotel_room";
 
-    private Connection con = new ConnectionFactory().getConnection();
+    private static final String SQL_ALL_FREE_ROOMS = null;
+
+    //private Connection con = new ConnectionFactory().getConnection();
+    private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt; 
     
     @Override
@@ -108,7 +111,26 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 	ResultSet res = null;
 	
 	try {
+	    //prepared_stmt = MainWindow.c.getConnection().prepareStatement(SQL_ALL_BOOKED_ROOMS);
 	    prepared_stmt = con.prepareStatement(SQL_ALL_BOOKED_ROOMS);
+	    res = prepared_stmt.executeQuery();
+	    while(res.next()){		
+		list.add(getObj(res));
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	
+	return list;
+    }
+
+    @Override
+    public ArrayList<HotelRoom> getFreeRooms(){
+	ArrayList<HotelRoom> list = new ArrayList<HotelRoom>();
+	ResultSet res = null;
+	
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_ALL_FREE_ROOMS);
 	    res = prepared_stmt.executeQuery();
 	    while(res.next()){		
 		list.add(getObj(res));

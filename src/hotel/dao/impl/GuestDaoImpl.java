@@ -16,7 +16,8 @@ public class GuestDaoImpl implements GuestDao{
     private static final String SQL_DELETE_GUEST = null;
     private static final String SQL_GET_BY_ID_GUEST = null;
     private static final String SQL_ALL_GUESTS = null;
-    private Connection con = new ConnectionFactory().getConnection();
+    //private Connection con = new ConnectionFactory().getConnection();
+    private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt;    
     
     @Override

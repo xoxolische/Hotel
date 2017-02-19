@@ -8,4 +8,6 @@ public interface HotelRoomService{
 
     ArrayList<HotelRoom> bookedRooms();
 
+    ArrayList<HotelRoom> freeRooms();
+
 }

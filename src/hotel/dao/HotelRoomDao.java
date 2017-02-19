@@ -16,4 +16,6 @@ public interface HotelRoomDao{
     List<HotelRoom> getAll();
 
     ArrayList<HotelRoom> getBookedRooms();
+
+    ArrayList<HotelRoom> getFreeRooms();
 }

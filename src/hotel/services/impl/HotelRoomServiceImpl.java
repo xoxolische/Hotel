@@ -17,4 +17,12 @@ public class HotelRoomServiceImpl implements HotelRoomService{
 	return bRooms;
     }
 
+    @Override
+    public ArrayList<HotelRoom> freeRooms(){
+	HotelRoomDao hotelRoomDao = new HotelRoomDaoImpl();
+	ArrayList<HotelRoom> fRooms= new ArrayList<HotelRoom>();
+	fRooms = hotelRoomDao.getFreeRooms();
+	return fRooms;
+    }
+
 }

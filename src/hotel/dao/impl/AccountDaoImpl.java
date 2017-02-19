@@ -17,7 +17,8 @@ public class AccountDaoImpl implements AccountDao{
     private static final String SQL_GET_BY_ID_ACCOUNT = null;
     private static final String SQL_ALL_ACCOUNTS = "SELECT * FROM account";
     
-    private Connection con = new ConnectionFactory().getConnection();
+    //private Connection con = new ConnectionFactory().getConnection();
+    private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt;    
     
     @Override

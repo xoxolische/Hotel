@@ -16,7 +16,8 @@ public class LegalEntityDaoImpl implements LegalEntityDao{
     private static final String SQL_DELETE_LEGALENTITY = null;
     private static final String SQL_GET_BY_ID_LEGALENTITY = null;
     private static final String SQL_ALL_LEGALENTITY = null;
-    private Connection con = new ConnectionFactory().getConnection();
+    //private Connection con = new ConnectionFactory().getConnection();
+    private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt; 
     
     @Override
