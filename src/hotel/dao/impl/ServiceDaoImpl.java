@@ -17,7 +17,7 @@ public class ServiceDaoImpl implements ServiceDao{
     private static final String SQL_DELETE_SERVICE = "DELETE FROM service WHERE id=?";
     private static final String SQL_GET_BY_ID_SERVICE = "SELECT * FROM service WHERE id=?";
     private static final String SQL_ALL_SERVICES = "SELECT * FROM service";
-    private Connection con = new ConnectionFactory().getConnection();
+    private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt;    
     
     @Override

@@ -17,7 +17,7 @@ public class LegalEntityDaoImpl implements LegalEntityDao{
     private static final String SQL_DELETE_LEGALENTITY = "DELETE FROM legal_entity WHERE id=?";
     private static final String SQL_GET_BY_ID_LEGALENTITY = "SELECT * FROM legal_entity WHERE id=?";
     private static final String SQL_ALL_LEGALENTITY = "SELECT * FROM legal_entity";
-    private Connection con = new ConnectionFactory().getConnection();
+    private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt; 
     
     @Override

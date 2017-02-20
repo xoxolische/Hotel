@@ -18,7 +18,7 @@ public class ReservationDaoImpl implements ReservationDao{
     private static final String SQL_DELETE_RESERVATION = "DELETE FROM reservation WHERE id=?";
     private static final String SQL_GET_BY_ID_RESERVATION = "SELECT * FROM reservation WHERE id=?";
     private static final String SQL_ALL_RESERVATIONS = "SELECT * FROM reservation";
-    private Connection con = new ConnectionFactory().getConnection();
+    private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt; 
     
     @Override

@@ -9,6 +9,7 @@ import java.util.List;
 
 import hotel.dao.GuestDao;
 import hotel.model.Guest;
+import hotel.ui.object_protytypes.Client;
 
 public class GuestDaoImpl implements GuestDao{
 
@@ -18,7 +19,8 @@ public class GuestDaoImpl implements GuestDao{
     private static final String SQL_DELETE_GUEST = "DELETE FROM guest WHERE id=?";
     private static final String SQL_GET_BY_ID_GUEST = "SELECT * FROM guest WHERE id=?";
     private static final String SQL_ALL_GUESTS = "SELECT * FROM guest";
-    private Connection con = new ConnectionFactory().getConnection();
+    private static final String SQL_MOVEDOFF_GUESTS = null;
+    private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt;    
     
     @Override
@@ -96,6 +98,24 @@ public class GuestDaoImpl implements GuestDao{
 	    e.printStackTrace();
 	}
 	return guest;
+    }
+
+    @Override
+    public ArrayList<Client> getMovedOff(){
+	ArrayList<Client> list = new ArrayList<Client>();
+	ResultSet res = null;
+	
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_MOVEDOFF_GUESTS);
+	    res = prepared_stmt.executeQuery();
+	    while(res.next()){		
+		//list.add(getObj(res));
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}	
+	
+	return list;
     }
 
 }
