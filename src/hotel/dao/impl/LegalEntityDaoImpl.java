@@ -12,12 +12,12 @@ import hotel.model.LegalEntity;
 
 public class LegalEntityDaoImpl implements LegalEntityDao{
 
-    private static final String SQL_ADD_LEGALENTITY = null;
-    private static final String SQL_DELETE_LEGALENTITY = null;
-    private static final String SQL_GET_BY_ID_LEGALENTITY = null;
-    private static final String SQL_ALL_LEGALENTITY = null;
-    
-    private Connection con = ConnectionFactory.cf.getConnection();
+    private static final String SQL_ADD_LEGALENTITY = "INSERT INTO legal_entity(name, kind_of_business, contact_name, phone_number) VALUES (?, ?, ?, ?)";
+    private static final String SQL_UPDATE_LEGALENTITY = "UPDATE legal_entity SET name=?, kind_of_business=?, contact_name=?, phone_number=? WHERE id=?";
+    private static final String SQL_DELETE_LEGALENTITY = "DELETE FROM legal_entity WHERE id=?";
+    private static final String SQL_GET_BY_ID_LEGALENTITY = "SELECT * FROM legal_entity WHERE id=?";
+    private static final String SQL_ALL_LEGALENTITY = "SELECT * FROM legal_entity";
+    private Connection con = new ConnectionFactory().getConnection();
     private PreparedStatement prepared_stmt; 
     
     @Override

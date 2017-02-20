@@ -12,12 +12,12 @@ import hotel.model.PriceList;
 
 public class PriceListDaoImpl implements PriceListDao{
 
-    private static final String SQL_ADD_PRICELIST = null;
-    private static final String SQL_DELETE_PRICELIST = null;
-    private static final String SQL_GET_BY_ID_PRICELIST = null;
-    private static final String SQL_ALL_PRICELISTS = null;
-    
-    private Connection con = ConnectionFactory.cf.getConnection();
+    private static final String SQL_ADD_PRICELIST = "INSERT INTO price_list(name, price) VALUES (?, ?)";
+    private static final String SQL_UPDATE_PRICELIST = "UPDATE price_list SET name=?, price=? WHERE id=?";
+    private static final String SQL_DELETE_PRICELIST = "DELETE FROM price_list WHERE id=?";
+    private static final String SQL_GET_BY_ID_PRICELIST = "SELECT * FROM price_list WHERE id=?";
+    private static final String SQL_ALL_PRICELISTS = "SELECT * FROM price_list";
+    private Connection con = new ConnectionFactory().getConnection();
     private PreparedStatement prepared_stmt; 
     
     @Override

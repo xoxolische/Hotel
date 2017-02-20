@@ -13,12 +13,12 @@ import hotel.model.Reservation;
 
 public class ReservationDaoImpl implements ReservationDao{
 
-    private static final String SQL_ADD_RESERVATION = null;
-    private static final String SQL_DELETE_RESERVATION = null;
-    private static final String SQL_GET_BY_ID_RESERVATION = null;
-    private static final String SQL_ALL_RESERVATIONS = null;
-    
-    private Connection con = ConnectionFactory.cf.getConnection();
+    private static final String SQL_ADD_RESERVATION = "INSERT INTO reservation(booking_date, arrival_date, days, persons, booking_cancellation, cancellation_reason, id_hotel_room, id_legal_entity, id_individual) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String SQL_UPDATE_RESERVATION = "UPDATE reservation SET booking_date=?, arrival_date=?, days=?, persons=?, booking_cancellation=?, cancellation_reason=?, id_hotel_room=?, id_legal_entity=?, id_individual=? WHERE id=?";
+    private static final String SQL_DELETE_RESERVATION = "DELETE FROM reservation WHERE id=?";
+    private static final String SQL_GET_BY_ID_RESERVATION = "SELECT * FROM reservation WHERE id=?";
+    private static final String SQL_ALL_RESERVATIONS = "SELECT * FROM reservation";
+    private Connection con = new ConnectionFactory().getConnection();
     private PreparedStatement prepared_stmt; 
     
     @Override

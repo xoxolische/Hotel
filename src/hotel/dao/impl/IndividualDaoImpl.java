@@ -12,12 +12,12 @@ import hotel.model.Individual;
 
 public class IndividualDaoImpl implements IndividualDao{
 
-    private static final String SQL_ADD_INDIVIDUAL = null;
-    private static final String SQL_DELETE_INDIVIDUAL = null;
-    private static final String SQL_GET_BY_ID_INDIVIDUAL = null;
-    private static final String SQL_ALL_INDIVIDUALS = null;
-
-    private Connection con = ConnectionFactory.cf.getConnection();
+    private static final String SQL_ADD_INDIVIDUAL = "INSERT INTO individual(name, sex, phone_number) VALUES (?, ?, ?)";
+    private static final String SQL_UPDATE_INDIVIDUAL = "UPDATE individual SET name=?, sex=?, phone_number=? WHERE id=?";
+    private static final String SQL_DELETE_INDIVIDUAL = "DELETE FROM individual WHERE id=?";
+    private static final String SQL_GET_BY_ID_INDIVIDUAL = "SELECT * FROM individual WHERE id=?";
+    private static final String SQL_ALL_INDIVIDUALS = "SELECT * FROM individual";
+    private Connection con = new ConnectionFactory().getConnection();
     private PreparedStatement prepared_stmt; 
     
     @Override

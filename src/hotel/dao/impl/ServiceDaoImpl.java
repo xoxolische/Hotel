@@ -12,12 +12,12 @@ import hotel.model.Service;
 
 public class ServiceDaoImpl implements ServiceDao{
 
-    private static final String SQL_ADD_SERVICE = null;
-    private static final String SQL_DELETE_SERVICE = null;
-    private static final String SQL_GET_BY_ID_SERVICE = null;
-    private static final String SQL_ALL_SERVICES = null;
-    
-    private Connection con = ConnectionFactory.cf.getConnection();
+    private static final String SQL_ADD_SERVICE = "INSERT INTO service(sdate, quantity, id_guest, id_price_list) VALUES (?, ?, ?, ?)";
+    private static final String SQL_UPDATE_SERVICE = "UPDATE service SET sdate=?, quantity=?, id_guest=?, id_price_list=? WHERE id=?";
+    private static final String SQL_DELETE_SERVICE = "DELETE FROM service WHERE id=?";
+    private static final String SQL_GET_BY_ID_SERVICE = "SELECT * FROM service WHERE id=?";
+    private static final String SQL_ALL_SERVICES = "SELECT * FROM service";
+    private Connection con = new ConnectionFactory().getConnection();
     private PreparedStatement prepared_stmt;    
     
     @Override

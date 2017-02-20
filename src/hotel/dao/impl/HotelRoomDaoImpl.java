@@ -12,22 +12,19 @@ import hotel.model.HotelRoom;
 
 public class HotelRoomDaoImpl implements HotelRoomDao{
 
-    private static final String SQL_ADD_ROOM = null;
+    private static final String SQL_ADD_ROOM = "INSERT INTO hotel_room(rnumber, rclass, capacity, `floor`, id_price_list) VALUES (?, ?, ?, ?, ?)";
 
-    private static final String SQL_DELETE_ROOM = null;
+    private static final String SQL_UPDATE_ROOM = "UPDATE hotel_room SET rnumber=?, rclass=?, capacity=?, floor=?, id_price_list=? WHERE id=?";
+    
+    private static final String SQL_DELETE_ROOM = "DELETE FROM hotel_room WHERE id=?";
 
-    private static final String SQL_GET_BY_ID_ROOM = null;
+    private static final String SQL_GET_BY_ID_ROOM = "SELECT * FROM hotel_room WHERE id=?";
 
-    private static final String SQL_ALL_ROOMS = null;
+    private static final String SQL_ALL_ROOMS = "SELECT * FROM hotel_room";
 
     private static final String SQL_ALL_BOOKED_ROOMS = "select * from hotel_room";
 
-    private static final String SQL_ALL_FREE_ROOMS = null;
-
-    //search fields int rClass, int floor, int rPlaces
-    private static final String SQL_FIND_ROOMS = "select * from hotel_room";
-
-    private Connection con = ConnectionFactory.cf.getConnection();
+    private Connection con = new ConnectionFactory().getConnection();
     private PreparedStatement prepared_stmt; 
     
     @Override
@@ -113,44 +110,7 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 	ResultSet res = null;
 	
 	try {
-	    //prepared_stmt = MainWindow.c.getConnection().prepareStatement(SQL_ALL_BOOKED_ROOMS);
 	    prepared_stmt = con.prepareStatement(SQL_ALL_BOOKED_ROOMS);
-	    res = prepared_stmt.executeQuery();
-	    while(res.next()){		
-		list.add(getObj(res));
-	    }
-	} catch (SQLException e) {
-	    e.printStackTrace();
-	}
-	
-	return list;
-    }
-
-    @Override
-    public ArrayList<HotelRoom> getFreeRooms(){
-	ArrayList<HotelRoom> list = new ArrayList<HotelRoom>();
-	ResultSet res = null;
-	
-	try {
-	    prepared_stmt = con.prepareStatement(SQL_ALL_FREE_ROOMS);
-	    res = prepared_stmt.executeQuery();
-	    while(res.next()){		
-		list.add(getObj(res));
-	    }
-	} catch (SQLException e) {
-	    e.printStackTrace();
-	}
-	
-	return list;
-    }
-
-    @Override
-    public ArrayList<HotelRoom> searchRooms(int rClass, int floor, int rPlaces){
-	ArrayList<HotelRoom> list = new ArrayList<HotelRoom>();
-	ResultSet res = null;
-	
-	try {
-	    prepared_stmt = con.prepareStatement(SQL_FIND_ROOMS);
 	    res = prepared_stmt.executeQuery();
 	    while(res.next()){		
 		list.add(getObj(res));

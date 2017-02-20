@@ -12,13 +12,14 @@ import hotel.model.Account;
 
 public class AccountDaoImpl implements AccountDao{
     
-    private static final String SQL_ADD_ACCOUNT = null; 
-    private static final String SQL_DELETE_ACCOUNT = null;
-    private static final String SQL_GET_BY_ID_ACCOUNT = null;
+    private static final String SQL_ADD_ACCOUNT = "INSERT INTO account(cost, id_guest) VALUES (?, ?)";
+    private static final String SQL_ADD_ACCOUNT_PAYER = "UPDATE account SET payment_date=?, id_individual=?, id_legal_entity=? WHERE id=?";
+    private static final String SQL_UPDATE_ACCOUNT = "UPDATE account SET cost=?, payment_date=?, id_guest=?, id_individual=?, id_legal_entity=? WHERE id=?";
+    private static final String SQL_DELETE_ACCOUNT = "DELETE FROM account WHERE id=?";
+    private static final String SQL_GET_BY_ID_ACCOUNT = "SELECT * FROM account WHERE id=?";
     private static final String SQL_ALL_ACCOUNTS = "SELECT * FROM account";
     
-    //private Connection con = new ConnectionFactory().getConnection();
-    private Connection con = ConnectionFactory.cf.getConnection();
+    private Connection con = new ConnectionFactory().getConnection();
     private PreparedStatement prepared_stmt;    
     
     @Override
