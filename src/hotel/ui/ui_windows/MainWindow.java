@@ -19,7 +19,10 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 
 import hotel.dao.impl.ConnectionFactory;
+import hotel.model.Guest;
+import hotel.services.GuestService;
 import hotel.services.HotelRoomService;
+import hotel.services.impl.GuestServiceImpl;
 import hotel.services.impl.HotelRoomServiceImpl;
 import hotel.ui.models.BookingInfoModel;
 import hotel.ui.models.ClientTableModel;
@@ -116,6 +119,7 @@ public class MainWindow extends JFrame {
     public MainWindow() {
 	
 	HotelRoomService hotelRoomService = new HotelRoomServiceImpl();
+	GuestService guestService = new GuestServiceImpl();
 	
 	
 	this.setLocation(100,100);
@@ -183,8 +187,8 @@ public class MainWindow extends JFrame {
 		//Користувач натиснув кнопку "Заброньовані номери"
 		//отже моделі для таблиці передається колекція
 		//з заброньованими номерами готелю
-		BookedNumsColl numsColl = new BookedNumsColl();
-		ArrayList<BookedNumber> bookedNums = numsColl.getList();
+		//BookedNumsColl numsColl = new BookedNumsColl();
+		//ArrayList<BookedNumber> bookedNums = numsColl.getList();
 		
 		//System.out.println("Size: "+bookedNums.size());
 		
@@ -348,14 +352,19 @@ public class MainWindow extends JFrame {
 		SearchNumResColl numsColl = new SearchNumResColl();
 		ArrayList<BookedNumber> bookedNums = numsColl.getList();
 		
+		
+		
 		//Додати кнопку "Забронювати"
 		if(bookedNums.size() != 0) {
 		    bookNo.setEnabled(true);
 		}
 		
 		//System.out.println("Size: "+bookedNums.size());
-		
-		numsModel = new NumberTableModel(bookedNums);
+		int rClass = classes.getSelectedItem().toString().length();
+		int floor = Integer.parseInt(floors.getSelectedItem().toString());
+		int rPlaces = Integer.parseInt(places.getSelectedItem().toString());
+			
+		numsModel = new NumberTableModel(hotelRoomService.searchRooms(rClass, floor, rPlaces));
 		bookingSearch.setModel(numsModel);
 	    }
 	});
@@ -497,12 +506,10 @@ public class MainWindow extends JFrame {
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
 		
-		ClientColl clColl = new ClientColl();
-		ArrayList<Client> clients = clColl.getList();
-		
-		ClientTableModel clModel = new ClientTableModel(clients);
-		
-		tableRes.setModel(clModel);
+		//ClientColl clColl = new ClientColl();
+		//ArrayList<Guest> clients = clColl.getList();
+				
+		tableRes.setModel(new ClientTableModel(guestService.getMovedOff()));
 	    }
 	});
 	

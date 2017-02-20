@@ -3,6 +3,10 @@ package hotel.ui.ui_windows;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -21,7 +25,7 @@ public class BookingWindow extends JFrame {
 	
 	private JLabel noLab;
 	private JLabel classLab;
-	private JLabel palcesLab;
+	private JLabel placesLab;
 	private JLabel floorLab;
 	
 	private JLabel dateBookLab = new JLabel("Дата бронювання: ");
@@ -43,9 +47,14 @@ public class BookingWindow extends JFrame {
 	public BookingWindow(int no, String klas, int places, int floor) {
 		noLab = new JLabel("Номер: "+no);
 		classLab = new JLabel("Клас: "+klas);
-		palcesLab = new JLabel("Місць: "+places);
+		placesLab = new JLabel("Місць: "+places);
 		floorLab = new JLabel("Поверх: "+floor);
 		
+		//if needed
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd hh mm");
+		Date timeNow = new Date(Calendar.getInstance().getTimeInMillis());
+		dateF.setText(dateFormat.format(timeNow));
+		//if needed
 		
 		this.setLocation(650,100);
 		this.setSize(500,200);
@@ -56,7 +65,7 @@ public class BookingWindow extends JFrame {
 		panel.setLayout(new GridLayout(0,2,0,5));
 		
 		panel.add(noLab);
-		panel.add(palcesLab);
+		panel.add(placesLab);
 		panel.add(classLab);
 		panel.add(floorLab);
 		

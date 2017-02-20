@@ -16,7 +16,7 @@ public class PriceListDaoImpl implements PriceListDao{
     private static final String SQL_DELETE_PRICELIST = null;
     private static final String SQL_GET_BY_ID_PRICELIST = null;
     private static final String SQL_ALL_PRICELISTS = null;
-    //private Connection con = new ConnectionFactory().getConnection();
+    
     private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt; 
     

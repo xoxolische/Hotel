@@ -10,4 +10,6 @@ public interface HotelRoomService{
 
     ArrayList<HotelRoom> freeRooms();
 
+    ArrayList<HotelRoom> searchRooms(int rClass, int floor, int rPlaces);
+
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
+import hotel.model.Guest;
 import hotel.ui.object_protytypes.Client;
 
 public class ClientTableModel extends AbstractTableModel {
@@ -14,8 +15,8 @@ public class ClientTableModel extends AbstractTableModel {
 	private static final long serialVersionUID = 288144083645719922L;
 	ArrayList<Client> clients;
 	
-	public ClientTableModel(ArrayList<Client> items) {
-		clients = items;
+	public ClientTableModel(ArrayList<Client> arrayList) {
+		clients = arrayList;
 	}
 	
 	@Override

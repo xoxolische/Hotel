@@ -1,8 +1,10 @@
 package hotel.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import hotel.model.Guest;
+import hotel.ui.object_protytypes.Client;
 
 public interface GuestDao{
 
@@ -13,4 +15,6 @@ public interface GuestDao{
     Guest getById(int id);
     
     List<Guest> getAll();
+
+    ArrayList<Client> getMovedOff();
 }

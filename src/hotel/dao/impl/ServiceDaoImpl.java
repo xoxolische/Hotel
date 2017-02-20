@@ -16,7 +16,7 @@ public class ServiceDaoImpl implements ServiceDao{
     private static final String SQL_DELETE_SERVICE = null;
     private static final String SQL_GET_BY_ID_SERVICE = null;
     private static final String SQL_ALL_SERVICES = null;
-    //private Connection con = new ConnectionFactory().getConnection();
+    
     private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt;    
     

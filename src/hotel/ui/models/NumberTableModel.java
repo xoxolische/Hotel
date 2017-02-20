@@ -31,7 +31,6 @@ public class NumberTableModel extends AbstractTableModel {
 
 	@Override
 	public int getRowCount() {
-
 		return nums.size();
 	}
 

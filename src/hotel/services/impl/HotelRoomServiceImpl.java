@@ -25,4 +25,12 @@ public class HotelRoomServiceImpl implements HotelRoomService{
 	return fRooms;
     }
 
+    @Override
+    public ArrayList<HotelRoom> searchRooms(int rClass, int floor, int rPlaces){
+	HotelRoomDao hotelRoomDao = new HotelRoomDaoImpl();
+	ArrayList<HotelRoom> foundRooms = new ArrayList<HotelRoom>();
+	foundRooms = hotelRoomDao.searchRooms(rClass, floor, rPlaces);
+	return foundRooms;
+    }
+
 }
