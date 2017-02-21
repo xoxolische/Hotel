@@ -24,9 +24,11 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 
     private static final String SQL_ALL_BOOKED_ROOMS = "select * from hotel_room";
 
-    private static final String SQL_FIND_ROOMS = null;
+    private static final String SQL_FIND_ROOMS_ANYCLASS = SQL_ALL_ROOMS + " WHERE floor=? AND capacity=?";
+    
+    private static final String SQL_GET_ROOMS_BY_CLASS = SQL_FIND_ROOMS_ANYCLASS + " AND rclass=?";
 
-    private static final String SQL_ALL_FREE_ROOMS = null;
+    private static final String SQL_ALL_FREE_ROOMS = "select * from hotel_room";
 
     private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt; 
@@ -150,7 +152,15 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 	ResultSet res = null;
 	
 	try {
-	    prepared_stmt = con.prepareStatement(SQL_FIND_ROOMS);
+	    if(rClass!=0){
+		prepared_stmt = con.prepareStatement(SQL_GET_ROOMS_BY_CLASS);
+		prepared_stmt.setInt(3, rClass);		
+	    }
+	    else{
+		prepared_stmt = con.prepareStatement(SQL_FIND_ROOMS_ANYCLASS);
+	    }
+	    prepared_stmt.setInt(1, floor);
+	    prepared_stmt.setInt(2, rPlaces);
 	    res = prepared_stmt.executeQuery();
 	    while(res.next()){		
 		list.add(getObj(res));

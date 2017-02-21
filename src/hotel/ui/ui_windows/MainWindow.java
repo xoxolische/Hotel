@@ -215,8 +215,8 @@ public class MainWindow extends JFrame {
 		//з номерами готелю, що незабаром звільняються
 		
 		//Analogue DAO
-		FreeSoonNumsColl numsColl = new FreeSoonNumsColl();
-		ArrayList<BookedNumber> freeNums = numsColl.getList();
+		//FreeSoonNumsColl numsColl = new FreeSoonNumsColl();
+		//ArrayList<BookedNumber> freeNums = numsColl.getList();
 		
 		//System.out.println("Size: "+freeNums.size());
 		
@@ -359,8 +359,12 @@ public class MainWindow extends JFrame {
 		    bookNo.setEnabled(true);
 		}
 		
+		int rClass = 0;
 		//System.out.println("Size: "+bookedNums.size());
-		int rClass = classes.getSelectedItem().toString().length();
+		if(!classes.getSelectedItem().toString().equals("Не важливо")){		    
+		     rClass = classes.getSelectedItem().toString().length();
+		}
+		
 		int floor = Integer.parseInt(floors.getSelectedItem().toString());
 		int rPlaces = Integer.parseInt(places.getSelectedItem().toString());
 			
