@@ -17,4 +17,6 @@ public interface GuestDao{
     List<Guest> getAll();
 
     ArrayList<Client> getMovedOff();
+
+    ArrayList<Client> getLivingNow();
 }

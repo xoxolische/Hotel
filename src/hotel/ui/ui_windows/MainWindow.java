@@ -517,6 +517,14 @@ public class MainWindow extends JFrame {
 	    }
 	});
 	
+	currClients.addActionListener(new ActionListener(){
+	    
+	    @Override
+	    public void actionPerformed(ActionEvent e){
+		tableRes.setModel(new ClientTableModel(guestService.getLivingNow()));	
+	    }
+	});
+	
 	tabbedPane.addTab("Номери", numsPanel);
 	tabbedPane.addTab("Бронювання", bookingSearchPanel);
 	tabbedPane.addTab("Інформація про бронювання", infoBookPanel);

@@ -8,4 +8,6 @@ public interface GuestService{
 
     ArrayList<Client> getMovedOff();
 
+    ArrayList<Client> getLivingNow();
+
 }

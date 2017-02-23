@@ -20,4 +20,12 @@ public class GuestServiceImpl implements GuestService{
 	return movedOff;
     }
 
+    @Override
+    public ArrayList<Client> getLivingNow(){
+	ArrayList<Client> livingNow = new ArrayList<Client>();
+	GuestDao gDao = new GuestDaoImpl();
+	livingNow = gDao.getLivingNow();
+	return livingNow;
+    }
+
 }
