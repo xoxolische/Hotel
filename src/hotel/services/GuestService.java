@@ -6,8 +6,4 @@ import hotel.ui.object_protytypes.Client;
 
 public interface GuestService{
 
-    ArrayList<Client> getMovedOff();
-
-    ArrayList<Client> getLivingNow();
-
 }

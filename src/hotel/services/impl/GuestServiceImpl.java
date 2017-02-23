@@ -12,20 +12,5 @@ import hotel.ui.object_protytypes.Client;
 
 public class GuestServiceImpl implements GuestService{
 
-    @Override
-    public ArrayList<Client> getMovedOff(){
-	ArrayList<Client> movedOff = new ArrayList<Client>();
-	GuestDao gDao = new GuestDaoImpl();
-	movedOff = gDao.getMovedOff();
-	return movedOff;
-    }
-
-    @Override
-    public ArrayList<Client> getLivingNow(){
-	ArrayList<Client> livingNow = new ArrayList<Client>();
-	GuestDao gDao = new GuestDaoImpl();
-	livingNow = gDao.getLivingNow();
-	return livingNow;
-    }
 
 }

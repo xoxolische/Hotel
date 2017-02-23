@@ -18,22 +18,18 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 
-import hotel.dao.impl.ConnectionFactory;
-import hotel.model.Guest;
+import hotel.services.ClientService;
 import hotel.services.GuestService;
 import hotel.services.HotelRoomService;
+import hotel.services.impl.ClientServiceImpl;
 import hotel.services.impl.GuestServiceImpl;
 import hotel.services.impl.HotelRoomServiceImpl;
 import hotel.ui.models.BookingInfoModel;
 import hotel.ui.models.ClientTableModel;
 import hotel.ui.models.NumberTableModel;
 import hotel.ui.object_protytypes.BookedNumber;
-import hotel.ui.object_protytypes.BookedNumsColl;
 import hotel.ui.object_protytypes.BookingInfoItem;
 import hotel.ui.object_protytypes.BookingInfoItemColl;
-import hotel.ui.object_protytypes.Client;
-import hotel.ui.object_protytypes.ClientColl;
-import hotel.ui.object_protytypes.FreeSoonNumsColl;
 import hotel.ui.object_protytypes.SearchNumResColl;
 
 /***
@@ -119,7 +115,8 @@ public class MainWindow extends JFrame {
     public MainWindow() {
 	
 	HotelRoomService hotelRoomService = new HotelRoomServiceImpl();
-	GuestService guestService = new GuestServiceImpl();
+	//GuestService guestService = new GuestServiceImpl();
+	ClientService clientService = new ClientServiceImpl();
 	
 	
 	this.setLocation(100,100);
@@ -513,7 +510,7 @@ public class MainWindow extends JFrame {
 		//ClientColl clColl = new ClientColl();
 		//ArrayList<Guest> clients = clColl.getList();
 				
-		tableRes.setModel(new ClientTableModel(guestService.getMovedOff()));
+		tableRes.setModel(new ClientTableModel(clientService.getMovedOff()));
 	    }
 	});
 	
@@ -521,7 +518,7 @@ public class MainWindow extends JFrame {
 	    
 	    @Override
 	    public void actionPerformed(ActionEvent e){
-		tableRes.setModel(new ClientTableModel(guestService.getLivingNow()));	
+		tableRes.setModel(new ClientTableModel(clientService.getLivingNow()));	
 	    }
 	});
 	
