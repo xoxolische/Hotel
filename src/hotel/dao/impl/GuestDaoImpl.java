@@ -9,7 +9,6 @@ import java.util.List;
 
 import hotel.dao.GuestDao;
 import hotel.model.Guest;
-import hotel.ui.object_protytypes.Client;
 
 public class GuestDaoImpl implements GuestDao{
 

@@ -19,10 +19,8 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 
 import hotel.services.ClientService;
-import hotel.services.GuestService;
 import hotel.services.HotelRoomService;
 import hotel.services.impl.ClientServiceImpl;
-import hotel.services.impl.GuestServiceImpl;
 import hotel.services.impl.HotelRoomServiceImpl;
 import hotel.ui.models.BookingInfoModel;
 import hotel.ui.models.ClientTableModel;

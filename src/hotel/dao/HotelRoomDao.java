@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hotel.model.HotelRoom;
+import hotel.model.Reservation;
 
 public interface HotelRoomDao{
     
@@ -20,4 +21,7 @@ public interface HotelRoomDao{
     ArrayList<HotelRoom> getFreeRooms();
 
     ArrayList<HotelRoom> searchRooms(int rClass, int floor, int rPlaces);
+
+    HotelRoom getByNumber(int no);
+
 }

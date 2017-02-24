@@ -30,6 +30,8 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 
     private static final String SQL_ALL_FREE_ROOMS = "select * from hotel_room";
 
+    private static final String SQL_GET_BY_NUMBER_ROOM = "SELECT * FROM hotel_room WHERE rnumber=?";
+
     private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt; 
     
@@ -170,5 +172,22 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 	}
 	
 	return list;
+    }
+
+    @Override
+    public HotelRoom getByNumber(int no){
+	ResultSet res = null;
+	
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_GET_BY_NUMBER_ROOM);
+	    prepared_stmt.setInt(1, no);
+	    res = prepared_stmt.executeQuery();	    
+	    if(res.next()){
+		return getObj(res);
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	return null;
     }
 }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import hotel.model.Guest;
 import hotel.ui.object_protytypes.Client;
 
 public class ClientTableModel extends AbstractTableModel {

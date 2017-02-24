@@ -13,4 +13,5 @@ public interface ServiceDao{
     Service getById(int id);
     
     List<Service> getAll();
+
 }

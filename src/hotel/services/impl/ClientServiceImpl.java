@@ -3,9 +3,7 @@ package hotel.services.impl;
 import java.util.ArrayList;
 
 import hotel.dao.ClientDao;
-import hotel.dao.GuestDao;
 import hotel.dao.impl.ClientDaoImpl;
-import hotel.dao.impl.GuestDaoImpl;
 import hotel.services.ClientService;
 import hotel.ui.object_protytypes.Client;
 
