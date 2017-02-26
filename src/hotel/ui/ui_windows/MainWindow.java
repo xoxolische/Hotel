@@ -80,6 +80,7 @@ public class MainWindow extends JFrame {
     private NumberTableModel numsModel;/* = new NumberTableModel();*/
     private JTable numsTable = new JTable();
     private JTable bookingSearch = new JTable();
+   
     
     private JButton bookNo = new JButton("Забронювати");
     
@@ -98,6 +99,7 @@ public class MainWindow extends JFrame {
     private BookingInfoModel bookInfoModel;
     
     JTabbedPane tabbedPane = new JTabbedPane();
+    
     
     
     //Мешканці

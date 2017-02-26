@@ -3,17 +3,22 @@ package hotel.ui.ui_windows;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
+import hotel.services.ClientService;
 import hotel.services.ReservationService;
+import hotel.services.impl.ClientServiceImpl;
 import hotel.services.impl.ReservationServiceImpl;
+import hotel.ui.models.ClientTableModel;
 
 
 /***
@@ -23,12 +28,14 @@ import hotel.services.impl.ReservationServiceImpl;
  */
 
 public class BookingWindow extends JFrame {
-    private ReservationService reservationService = new ReservationServiceImpl();	
+    private ReservationService reservationService = new ReservationServiceImpl();
+    private ClientService clientService = new ClientServiceImpl();
     private JLabel noLab;
     private JLabel classLab;
     private JLabel placesLab;
     private JLabel floorLab;
     
+      
     private JLabel dateBookLab = new JLabel("Дата бронювання: ");
     //private JTextField dateF = new JTextField();
     private DatePickerUI dateF = new DatePickerUI();
@@ -43,28 +50,13 @@ public class BookingWindow extends JFrame {
     private JButton bookBut = new JButton("Забронювати");
     private JButton cancBut = new JButton("Скасувати");
     
-    private JPanel panel = new JPanel();
+    private JPanel panel = new JPanel();    
     
-    private JLabel firstName = new JLabel("Ім'я: ");
-    private JTextField fName = new JTextField();
-    
-    private JLabel surName = new JLabel("Прізвище: ");
-    private JTextField sName = new JTextField();
-    
-    private JLabel patronimic = new JLabel("По батькові: ");
-    private JTextField patName = new JTextField();
-    
-    
-    public BookingWindow(int no, String klas, int places, int floor) {
+    public BookingWindow(int no, String klas, int places, int floor) {	
 	noLab = new JLabel("Номер: "+no);
 	classLab = new JLabel("Клас: "+klas);
 	placesLab = new JLabel("Місць: "+places);
 	floorLab = new JLabel("Поверх: "+floor);
-	
-	
-	fName.setToolTipText("Іван");
-	sName.setToolTipText("Іванов");
-	patName.setToolTipText("Іванович");
 	
 	
 	//if needed
@@ -102,16 +94,8 @@ public class BookingWindow extends JFrame {
 	    days.addItem(i);
 	}
 	
+	//panel.add(paneClient);
 	panel.add(days);
-	
-	panel.add(firstName);
-	panel.add(fName);
-	
-	panel.add(surName);
-	panel.add(sName);
-	
-	panel.add(patronimic);
-	panel.add(patName);
 	
 	
 	
@@ -119,6 +103,8 @@ public class BookingWindow extends JFrame {
 	
 	panel.add(bookBut);
 	panel.add(cancBut);
+	
+	
 	
 	bookBut.addActionListener(new ActionListener() {
 	    
