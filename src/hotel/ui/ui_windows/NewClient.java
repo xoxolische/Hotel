@@ -9,8 +9,15 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+
+import hotel.services.IndividualService;
+import hotel.services.LegalEntityService;
+import hotel.services.impl.IndividualServiceImpl;
+import hotel.services.impl.LegalEntityServiceImpl;
 
 
 public class NewClient extends JFrame{
@@ -41,6 +48,9 @@ public class NewClient extends JFrame{
     
     private JButton add;
     private JButton cancel;
+    
+    private LegalEntityService legalEntityService = new LegalEntityServiceImpl();
+    private IndividualService individualService = new IndividualServiceImpl();
     
     
     
@@ -151,6 +161,39 @@ public class NewClient extends JFrame{
 		    businessName.setEditable(false);
 		    orgName.setEditable(false);
 		}
+	    }
+	});
+	
+	add.addActionListener(new ActionListener(){
+	    
+	    @Override
+	    public void actionPerformed(ActionEvent e){
+		if(legalEntity.isSelected()){
+		    legalEntityService.add(
+			    orgName.getText(),
+			    businessName.getText(),
+			    fName.getText()+";"+sName.getText()+";"+patName.getText(),			    
+			    phoneNum.getText()
+			    );
+		    JOptionPane.showMessageDialog(null, "Нову організацію додано.");
+		}
+		else{
+		    individualService.add(
+			    fName.getText()+";"+sName.getText()+";"+patName.getText(),
+			    sex.getSelectedItem().toString(),
+			    phoneNum.getText()
+			    );
+		    JOptionPane.showMessageDialog(null, "Нову фізичну особу додано.");
+		}
+		
+		SwingUtilities.getWindowAncestor(add).dispose();		
+	    }
+	});
+	cancel.addActionListener(new ActionListener(){
+	    
+	    @Override
+	    public void actionPerformed(ActionEvent e){
+		SwingUtilities.getWindowAncestor(cancel).dispose();
 	    }
 	});
 	
