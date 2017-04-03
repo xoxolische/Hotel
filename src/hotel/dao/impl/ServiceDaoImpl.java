@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hotel.dao.ServiceDao;
+import hotel.model.PriceListItem;
 import hotel.model.Service;
 
 public class ServiceDaoImpl implements ServiceDao{
@@ -93,6 +94,18 @@ public class ServiceDaoImpl implements ServiceDao{
 	    e.printStackTrace();
 	}
 	return service;
+    }
+
+    @Override
+    public ArrayList<PriceListItem> getServicesFromPriceList(){
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    @Override
+    public ArrayList<PriceListItem> getAllPriceListItems(){
+	// TODO Auto-generated method stub
+	return null;
     }
 
 }

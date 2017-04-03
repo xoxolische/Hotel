@@ -9,6 +9,7 @@ import java.util.List;
 
 import hotel.dao.GuestDao;
 import hotel.model.Guest;
+import hotel.model.GuestDetail;
 
 public class GuestDaoImpl implements GuestDao{
 
@@ -98,6 +99,18 @@ public class GuestDaoImpl implements GuestDao{
 	    e.printStackTrace();
 	}
 	return guest;
+    }
+
+    @Override
+    public ArrayList<GuestDetail> getAllGuestDetail(){
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    @Override
+    public ArrayList<GuestDetail> getGuestDetails(){
+	// TODO Auto-generated method stub
+	return null;
     }
    
 }

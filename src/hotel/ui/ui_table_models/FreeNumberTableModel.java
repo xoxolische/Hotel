@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import hotelPomin.dao.HotelRoomDAO;
-import hotelPomin.vo.HotelRoom;
+import hotel.dao.HotelRoomDao;
+import hotel.model.HotelRoom;
 
 
 public class FreeNumberTableModel extends AbstractTableModel {
@@ -16,10 +16,12 @@ public class FreeNumberTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private ArrayList<HotelRoom> nums;
+	private HotelRoomDao roomDao;
 	
 	public FreeNumberTableModel() throws SQLException {
 		
-		HotelRoomDAO roomDao = new HotelRoomDAO();
+		//HotelRoomDAO roomDao = new HotelRoomDAO();
+	    
 		nums = roomDao.getFreeNumbersDetails();
 		
 	}

@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import hotelPomin.vo.GuestDetail;
+import hotel.dao.GuestDao;
+import hotel.model.GuestDetail;
 
 
 public class ClientDemoTableModel extends AbstractTableModel {
@@ -14,10 +15,15 @@ public class ClientDemoTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private ArrayList<GuestDetail> guests;
+	private GuestDao guestDao;
 	
 	public ClientDemoTableModel() {
-		guests = new ArrayList<GuestDetail>();
+	    
+	    	guests = guestDao.getAllGuestDetail();
+	    	
 		
+	    	/*
+		guests = new ArrayList<GuestDetail>();
 		GuestDetail det = new GuestDetail();
 		
 		det.setArrivDateStr("2017-02-08");
@@ -53,6 +59,7 @@ public class ClientDemoTableModel extends AbstractTableModel {
 			guests.add(det2);
 			guests.add(det3);
 		}
+		*/
 	}
 	
 	@Override

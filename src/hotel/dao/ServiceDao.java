@@ -1,7 +1,9 @@
 package hotel.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import hotel.model.PriceListItem;
 import hotel.model.Service;
 
 public interface ServiceDao{
@@ -13,5 +15,9 @@ public interface ServiceDao{
     Service getById(int id);
     
     List<Service> getAll();
+
+    ArrayList<PriceListItem> getServicesFromPriceList();
+
+    ArrayList<PriceListItem> getAllPriceListItems();
 
 }

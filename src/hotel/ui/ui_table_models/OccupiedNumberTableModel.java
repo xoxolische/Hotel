@@ -5,8 +5,9 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import hotelPomin.dao.HotelRoomDAO;
-import hotelPomin.vo.OccupiedNumberInfo;
+import hotel.dao.HotelRoomDao;
+import hotel.model.OccupiedNumberInfo;
+
 
 
 public class OccupiedNumberTableModel extends AbstractTableModel {
@@ -16,10 +17,12 @@ public class OccupiedNumberTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	ArrayList<OccupiedNumberInfo> nums;
+	private HotelRoomDao roomDao;
 	
 	public OccupiedNumberTableModel() throws SQLException {
 		
-		HotelRoomDAO roomDao = new HotelRoomDAO();
+		//HotelRoomDAO roomDao = new HotelRoomDAO();
+	    
 		nums = roomDao.getOccupiedNumbersDetails();
 		
 	}

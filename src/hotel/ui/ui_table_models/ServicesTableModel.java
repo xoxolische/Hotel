@@ -5,8 +5,9 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import hotelPomin.dao.ServiceDAO;
-import hotelPomin.vo.PriceListItem;
+import hotel.dao.ServiceDao;
+import hotel.model.PriceListItem;
+
 
 
 
@@ -17,10 +18,11 @@ public class ServicesTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private ArrayList<PriceListItem> services;
+	private ServiceDao servDao;
 	
 	public ServicesTableModel() throws SQLException {
 		
-		ServiceDAO servDao = new ServiceDAO();
+		//ServiceDAO servDao = new ServiceDAO();
 		services = servDao.getServicesFromPriceList();
 		
 	}

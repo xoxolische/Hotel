@@ -2,7 +2,10 @@ package hotel.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import hotel.model.BookedNumberInfo;
 import hotel.model.HotelRoom;
+import hotel.model.OccupiedNumberInfo;
 
 
 public interface HotelRoomDao{
@@ -22,5 +25,19 @@ public interface HotelRoomDao{
     ArrayList<HotelRoom> searchRooms(int rClass, int floor, int rPlaces);
 
     HotelRoom getByNumber(int no);
+
+    ArrayList<BookedNumberInfo> getBookedNumbersDetailsIndividal();
+
+    ArrayList<BookedNumberInfo> getBookedNumbersDetailsLegalEntity();
+
+    ArrayList<HotelRoom> getFreeNumbersDetails();
+
+    ArrayList<OccupiedNumberInfo> getOccupiedNumbersDetails();
+
+    ArrayList<OccupiedNumberInfo> getAllOccupiedNumbers();
+
+    ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsIndividual();
+
+    ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsLegalEntity();
 
 }

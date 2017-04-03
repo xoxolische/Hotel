@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import hotelPomin.dao.GuestDAO;
-import hotelPomin.vo.GuestDetail;
+import hotel.dao.GuestDao;
+import hotel.model.GuestDetail;
 
 
 
@@ -17,10 +17,12 @@ public class GuestTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private ArrayList<GuestDetail> guests;
+	private GuestDao guestDao;
 	
 	public GuestTableModel() throws SQLException {
-		GuestDAO guestDao = new GuestDAO();
-		guests = guestDao.getGuestDetails();
+		//GuestDAO guestDao = new GuestDAO();
+		//guests = guestDao.getGuestDetails();
+	    guests = guestDao.getAllGuestDetail();
 	}
 	
 	@Override

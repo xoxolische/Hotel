@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hotel.dao.HotelRoomDao;
+import hotel.model.BookedNumberInfo;
 import hotel.model.HotelRoom;
+import hotel.model.OccupiedNumberInfo;
 
 public class HotelRoomDaoImpl implements HotelRoomDao{
 
@@ -188,6 +190,48 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
+	return null;
+    }
+
+    @Override
+    public ArrayList<BookedNumberInfo> getBookedNumbersDetailsIndividal(){
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    @Override
+    public ArrayList<BookedNumberInfo> getBookedNumbersDetailsLegalEntity(){
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    @Override
+    public ArrayList<HotelRoom> getFreeNumbersDetails(){
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    @Override
+    public ArrayList<OccupiedNumberInfo> getOccupiedNumbersDetails(){
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    @Override
+    public ArrayList<OccupiedNumberInfo> getAllOccupiedNumbers(){
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    @Override
+    public ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsIndividual(){
+	// TODO Auto-generated method stub
+	return null;
+    }
+
+    @Override
+    public ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsLegalEntity(){
+	// TODO Auto-generated method stub
 	return null;
     }
 }
