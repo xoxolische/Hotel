@@ -1,4 +1,4 @@
-package dao;
+package hotelPomin.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -7,9 +7,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import vo.BookedNumberInfo;
-import vo.HotelRoom;
-import vo.OccupiedNumberInfo;
+import hotelPomin.vo.BookedNumberInfo;
+import hotelPomin.vo.HotelRoom;
+import hotelPomin.vo.OccupiedNumberInfo;
+
+
 
 public class HotelRoomDAO {
 

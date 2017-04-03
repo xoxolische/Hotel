@@ -1,4 +1,4 @@
-package dao;
+package hotelPomin.dao;
 
 import java.sql.*;
 

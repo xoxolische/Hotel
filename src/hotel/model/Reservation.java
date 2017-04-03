@@ -2,115 +2,114 @@ package hotel.model;
 
 import java.sql.Date;
 
-public class Reservation{
+public class Reservation {
 
-    private int id;
-    private Date bookingDate;
-    private Date arrivalDate;
-    private int days;
-    private int persons;
-    private Date bookingCancelationDate;
-    private String cancelationReason;
-    private int idHotelRoom;
-    private int idLegalEntity;
-    private int idIndividual;
-    
-    public Reservation(){
-    }
+	private long id;
+	private Date bookingDate;
+	private Date arrivalDate;
+	private int days;
+	private int persons;
+	private Date bookingCancelationDate;
+	private String cancelationReason;
+	private long idHotelRoom;
+	private long idLegalEntity;
+	private long idIndividual;
 
-    public Reservation(int id, Date bookingDate, Date arrivalDate, int days,
-	    int persons, Date bookingCancelationDate, String cancelationReason,
-	    int idHotelRoom, int idLegalEntity, int idIndividual){
-	this.id = id;
-	this.bookingDate = bookingDate;
-	this.arrivalDate = arrivalDate;
-	this.days = days;
-	this.persons = persons;
-	this.bookingCancelationDate = bookingCancelationDate;
-	this.cancelationReason = cancelationReason;
-	this.idHotelRoom = idHotelRoom;
-	this.idLegalEntity = idLegalEntity;
-	this.idIndividual = idIndividual;
-    }
+	public Reservation() {
+	}
 
-    public int getId(){
-        return id;
-    }
+	public Reservation(long id, Date bookingDate, Date arrivalDate, int days,
+			int persons, Date bookingCancelationDate, String cancelationReason,
+			long idHotelRoom, long idLegalEntity, long idIndividual) {
+		this.id = id;
+		this.bookingDate = bookingDate;
+		this.arrivalDate = arrivalDate;
+		this.days = days;
+		this.persons = persons;
+		this.bookingCancelationDate = bookingCancelationDate;
+		this.cancelationReason = cancelationReason;
+		this.idHotelRoom = idHotelRoom;
+		this.idLegalEntity = idLegalEntity;
+		this.idIndividual = idIndividual;
+	}
 
-    public void setId(int id){
-        this.id = id;
-    }
+	public long getId(){
+	    return id;
+	}
 
-    public Date getBookingDate(){
-        return bookingDate;
-    }
+	public void setId(long id){
+	    this.id = id;
+	}
 
-    public void setBookingDate(Date bookingDate){
-        this.bookingDate = bookingDate;
-    }
+	public Date getBookingDate(){
+	    return bookingDate;
+	}
 
-    public Date getArrivalDate(){
-        return arrivalDate;
-    }
+	public void setBookingDate(Date bookingDate){
+	    this.bookingDate = bookingDate;
+	}
 
-    public void setArrivalDate(Date arrivalDate){
-        this.arrivalDate = arrivalDate;
-    }
+	public Date getArrivalDate(){
+	    return arrivalDate;
+	}
 
-    public int getDays(){
-        return days;
-    }
+	public void setArrivalDate(Date arrivalDate){
+	    this.arrivalDate = arrivalDate;
+	}
 
-    public void setDays(int days){
-        this.days = days;
-    }
+	public int getDays(){
+	    return days;
+	}
 
-    public int getPersons(){
-        return persons;
-    }
+	public void setDays(int days){
+	    this.days = days;
+	}
 
-    public void setPersons(int persons){
-        this.persons = persons;
-    }
+	public int getPersons(){
+	    return persons;
+	}
 
-    public Date getBookingCancelationDate(){
-        return bookingCancelationDate;
-    }
+	public void setPersons(int persons){
+	    this.persons = persons;
+	}
 
-    public void setBookingCancelationDate(Date bookingCancelationDate){
-        this.bookingCancelationDate = bookingCancelationDate;
-    }
+	public Date getBookingCancelationDate(){
+	    return bookingCancelationDate;
+	}
 
-    public String getCancelationReason(){
-        return cancelationReason;
-    }
+	public void setBookingCancelationDate(Date bookingCancelationDate){
+	    this.bookingCancelationDate = bookingCancelationDate;
+	}
 
-    public void setCancelationReason(String cancelationReason){
-        this.cancelationReason = cancelationReason;
-    }
+	public String getCancelationReason(){
+	    return cancelationReason;
+	}
 
-    public int getIdHotelRoom(){
-        return idHotelRoom;
-    }
+	public void setCancelationReason(String cancelationReason){
+	    this.cancelationReason = cancelationReason;
+	}
 
-    public void setIdHotelRoom(int idHotelRoom){
-        this.idHotelRoom = idHotelRoom;
-    }
+	public long getIdHotelRoom(){
+	    return idHotelRoom;
+	}
 
-    public int getIdLegalEntity(){
-        return idLegalEntity;
-    }
+	public void setIdHotelRoom(long idHotelRoom){
+	    this.idHotelRoom = idHotelRoom;
+	}
 
-    public void setIdLegalEntity(int idLegalEntity){
-        this.idLegalEntity = idLegalEntity;
-    }
+	public long getIdLegalEntity(){
+	    return idLegalEntity;
+	}
 
-    public int getIdIndividual(){
-        return idIndividual;
-    }
+	public void setIdLegalEntity(long idLegalEntity){
+	    this.idLegalEntity = idLegalEntity;
+	}
 
-    public void setIdIndividual(int idIndividual){
-        this.idIndividual = idIndividual;
-    }
+	public long getIdIndividual(){
+	    return idIndividual;
+	}
 
+	public void setIdIndividual(long idIndividual){
+	    this.idIndividual = idIndividual;
+	}
 }

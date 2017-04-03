@@ -34,9 +34,9 @@ public class AccountDaoImpl implements AccountDao{
 	    else{
 		prepared_stmt.setNull(2, Types.INTEGER);
 	    }
-	    prepared_stmt.setInt(3, account.getIdGuest());
-	    prepared_stmt.setInt(4, account.getIdIndividual());
-	    prepared_stmt.setInt(5, account.getIdLegalEntity());	    
+	    prepared_stmt.setLong(3, account.getIdGuest());
+	    prepared_stmt.setLong(4, account.getIdIndividual());
+	    prepared_stmt.setLong(5, account.getIdLegalEntity());	    
 	    
 	    prepared_stmt.executeUpdate();	    
 	} catch (SQLException e) {

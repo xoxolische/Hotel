@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import hotel.dao.ClientDao;
-import hotel.ui.object_protytypes.Client;
 
 public class ClientDaoImpl implements ClientDao{
 
@@ -17,6 +16,7 @@ public class ClientDaoImpl implements ClientDao{
     private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt; 
     
+    /*
     private Client getClientObject(ResultSet result){
 	Client client = new Client();
 	try {
@@ -70,6 +70,6 @@ public class ClientDaoImpl implements ClientDao{
 	
 	return list;
     }
-    
+    */
     
 }

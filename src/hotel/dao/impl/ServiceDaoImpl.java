@@ -26,8 +26,8 @@ public class ServiceDaoImpl implements ServiceDao{
 	    prepared_stmt = con.prepareStatement(SQL_ADD_SERVICE);
 	    prepared_stmt.setDate(1, service.getDate());	    
 	    prepared_stmt.setInt(2, service.getQuantity());
-	    prepared_stmt.setInt(3, service.getIdGuest());
-	    prepared_stmt.setInt(4, service.getIdPriceList());	    
+	    prepared_stmt.setLong(3, service.getIdGuest());
+	    prepared_stmt.setLong(4, service.getIdPriceList());	    
 	    
 	    prepared_stmt.executeUpdate();	    
 	} catch (SQLException e) {

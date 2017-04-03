@@ -1,4 +1,4 @@
-package vo;
+package hotelPomin.vo;
 
 public class HotelRoom {
 

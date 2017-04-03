@@ -1,13 +1,10 @@
+package hotelPomin;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import vo.BookedNumberInfo;
-import vo.HotelRoom;
-import vo.OccupiedNumberInfo;
-import vo.PriceListItem;
-import dao.HotelRoomDAO;
-import dao.PriceListDAO;
-
+import hotelPomin.dao.HotelRoomDAO;
+import hotelPomin.vo.HotelRoom;
 
 public class Main {
 

@@ -1,12 +1,13 @@
-package ui_table_models;
+package hotelPomin.ui_table_models;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import vo.HotelRoom;
-import dao.HotelRoomDAO;
+import hotelPomin.dao.HotelRoomDAO;
+import hotelPomin.vo.HotelRoom;
+
 
 public class FreeNumberTableModel extends AbstractTableModel {
 	

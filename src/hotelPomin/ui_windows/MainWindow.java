@@ -1,11 +1,10 @@
-package ui_windows;
+package hotelPomin.ui_windows;
 
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -14,7 +13,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -23,14 +21,8 @@ import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import dao.GuestDAO;
-import dao.ServiceDAO;
-import ui_table_models.ClientDemoTableModel;
-import ui_table_models.FreeNumberTableModel;
-import ui_table_models.OccupiedNumberTableModel;
-import ui_table_models.ServicesTableModel;
-import vo.ClientServiceInfo;
-import vo.Individual;
+import hotelPomin.ui_table_models.ClientDemoTableModel;
+
 
 /***
  * Основне вікно інтерфейсу з наступними вкладками:

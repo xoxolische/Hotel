@@ -40,10 +40,10 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 	try {
 	    prepared_stmt = con.prepareStatement(SQL_ADD_ROOM);
 	    prepared_stmt.setInt(1, hm.getNumber());	    
-	    prepared_stmt.setInt(2, hm.getRoomClass());
+	    prepared_stmt.setInt(2, hm.getrClass());
 	    prepared_stmt.setInt(3, hm.getCapacity());
 	    prepared_stmt.setInt(4, hm.getFloor());
-	    prepared_stmt.setInt(5, hm.getIdPriceList());	    
+	    prepared_stmt.setLong(5, hm.getIdPriceList());	    
 	    
 	    prepared_stmt.executeUpdate();	    
 	} catch (SQLException e) {
@@ -102,7 +102,7 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
 	try {
 	    room.setId(result.getInt(1));
 	    room.setNumber(result.getInt(2));
-	    room.setRoomClass(result.getInt(3));
+	    room.setrClass(result.getInt(3));
 	    room.setCapacity(result.getInt(4));
 	    room.setFloor(result.getInt(5));
 	    room.setIdPriceList(result.getInt(6));	    

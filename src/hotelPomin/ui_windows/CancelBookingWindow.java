@@ -1,4 +1,4 @@
-package ui_windows;
+package hotelPomin.ui_windows;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;

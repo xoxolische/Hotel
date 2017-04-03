@@ -1,73 +1,74 @@
 package hotel.model;
 
-public class HotelRoom{
+public class HotelRoom {
 
-    private int id;
-    private int number;
-    private int rClass;
-    private int capacity;
-    private int floor;
-    private int idPriceList;
-    
-    public HotelRoom(){
-	
-    }
+	private long id;
+	private int number;
+	private int rClass;
+	private int capacity;
+	private int floor;
+	private long idPriceList;
 
-    public HotelRoom(int id, int number, int rClass, int capacity, int floor, int idPriceList){
-	this.id = id;
-	this.number = number;
-	this.rClass = rClass;
-	this.capacity = capacity;
-	this.floor = floor;
-	this.idPriceList = idPriceList;
-    }
+	public HotelRoom() {
 
-    public int getId(){
-        return id;
-    }
+	}
 
-    public void setId(int id){
-        this.id = id;
-    }
+	public HotelRoom(long id, int number, int rClass, int capacity, int floor,
+			long idPriceList) {
+		this.id = id;
+		this.number = number;
+		this.rClass = rClass;
+		this.capacity = capacity;
+		this.floor = floor;
+		this.idPriceList = idPriceList;
+	}
 
-    public int getNumber(){
-        return number;
-    }
+	public long getId(){
+	    return id;
+	}
 
-    public void setNumber(int number){
-        this.number = number;
-    }
+	public void setId(long id){
+	    this.id = id;
+	}
 
-    public int getRoomClass(){
-        return rClass;
-    }
+	public int getNumber(){
+	    return number;
+	}
 
-    public void setRoomClass(int rClass){
-        this.rClass = rClass;
-    }
+	public void setNumber(int number){
+	    this.number = number;
+	}
 
-    public int getCapacity(){
-        return capacity;
-    }
+	public int getrClass(){
+	    return rClass;
+	}
 
-    public void setCapacity(int capacity){
-        this.capacity = capacity;
-    }
+	public void setrClass(int rClass){
+	    this.rClass = rClass;
+	}
 
-    public int getFloor(){
-        return floor;
-    }
+	public int getCapacity(){
+	    return capacity;
+	}
 
-    public void setFloor(int floor){
-        this.floor = floor;
-    }
+	public void setCapacity(int capacity){
+	    this.capacity = capacity;
+	}
 
-    public int getIdPriceList(){
-        return idPriceList;
-    }
+	public int getFloor(){
+	    return floor;
+	}
 
-    public void setIdPriceList(int idPriceList){
-        this.idPriceList = idPriceList;
-    }
+	public void setFloor(int floor){
+	    this.floor = floor;
+	}
+
+	public long getIdPriceList(){
+	    return idPriceList;
+	}
+
+	public void setIdPriceList(long idPriceList){
+	    this.idPriceList = idPriceList;
+	}
 
 }

@@ -1,4 +1,4 @@
-package vo;
+package hotelPomin.vo;
 
 import java.sql.Date;
 

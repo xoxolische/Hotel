@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import hotel.dao.ClientDao;
 import hotel.dao.impl.ClientDaoImpl;
 import hotel.services.ClientService;
-import hotel.ui.object_protytypes.Client;
 
 public class ClientServiceImpl implements ClientService{
     
+    /*
     @Override
     public ArrayList<Client> getMovedOff(){
 	ArrayList<Client> movedOff = new ArrayList<Client>();
@@ -24,5 +24,6 @@ public class ClientServiceImpl implements ClientService{
 	livingNow = gDao.getLivingNow();
 	return livingNow;
     }
+    */
 
 }

@@ -1,52 +1,52 @@
 package hotel.model;
 
-public class Individual{
+public class Individual {
 
-    private int id;
-    private String name;
-    private String sex;
-    private String phoneNumber;
-    
-    public Individual(){
-    }
+	private long id;
+	private String name;
+	private String sex;
+	private String phoneNumber;
 
-    public Individual(int id, String name, String sex, String phoneNumber){
-	this.id = id;
-	this.name = name;
-	this.sex = sex;
-	this.phoneNumber = phoneNumber;
-    }
+	public Individual() {
+	}
 
-    public int getId(){
-        return id;
-    }
+	public Individual(long id, String name, String sex, String phoneNumber) {
+		this.id = id;
+		this.name = name;
+		this.sex = sex;
+		this.phoneNumber = phoneNumber;
+	}
 
-    public void setId(int id){
-        this.id = id;
-    }
+	public long getId() {
+		return id;
+	}
 
-    public String getName(){
-        return name;
-    }
+	public void setId(long id) {
+		this.id = id;
+	}
 
-    public void setName(String name){
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getSex(){
-        return sex;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setSex(String sex){
-        this.sex = sex;
-    }
+	public String getSex() {
+		return sex;
+	}
 
-    public String getPhoneNumber(){
-        return phoneNumber;
-    }
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 
-    public void setPhoneNumber(String phoneNumber){
-        this.phoneNumber = phoneNumber;
-    }
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
 
 }

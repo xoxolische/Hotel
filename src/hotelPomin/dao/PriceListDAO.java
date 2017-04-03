@@ -1,12 +1,13 @@
-package dao;
+package hotelPomin.dao;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import vo.PriceListItem;
+import hotelPomin.vo.PriceListItem;
+
 
 
 public class PriceListDAO {

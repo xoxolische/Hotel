@@ -1,12 +1,14 @@
-package ui_table_models;
+package hotelPomin.ui_table_models;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import vo.PriceListItem;
-import dao.ServiceDAO;
+import hotelPomin.dao.ServiceDAO;
+import hotelPomin.vo.PriceListItem;
+
+
 
 public class ServicesTableModel extends AbstractTableModel {
 	

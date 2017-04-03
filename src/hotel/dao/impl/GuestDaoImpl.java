@@ -29,9 +29,9 @@ public class GuestDaoImpl implements GuestDao{
 	    prepared_stmt = con.prepareStatement(SQL_ADD_GUEST);
 	    prepared_stmt.setDate(1, guest.getArrivalDate());	    
 	    prepared_stmt.setDate(2, guest.getDepartureDate());
-	    prepared_stmt.setBoolean(3, guest.getAdditionalSpace());
-	    prepared_stmt.setInt(4, guest.getIdIndividual());
-	    prepared_stmt.setInt(5, guest.getIdHotelRoom());	    
+	    prepared_stmt.setBoolean(3, guest.isAdditionalSpace());
+	    prepared_stmt.setLong(4, guest.getIdIndividual());
+	    prepared_stmt.setLong(5, guest.getIdHotelRoom());	    
 	    
 	    prepared_stmt.executeUpdate();	    
 	} catch (SQLException e) {

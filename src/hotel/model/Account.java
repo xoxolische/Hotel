@@ -2,64 +2,75 @@ package hotel.model;
 
 import java.sql.Date;
 
-public class Account{
+public class Account {
 
-    private int id;
-    private double cost;
-    private Date paymentDate;
-    private int idGuest;
-    private int idIndividual;
-    private int idLegalEntity;
-    
-    public Account(){
-    }
-    
-    public Account(int id, double cost, int idGuest, Date paymentDate, int idIndividual, int idLegalEntity){
-	this.id = id;
-	this.cost = cost;
-	this.idGuest = idGuest;
-	this.paymentDate = paymentDate;
-	this.idIndividual = idIndividual;
-	this.idLegalEntity = idLegalEntity;
-    }
-    public void setId(int id){
-	this.id = id;
-    }
-    public void setCost(double cost){
-	this.cost = cost;
-    }
-    public void setIdGuest(int idGuest){
-	this.idGuest = idGuest;
-    }
-    public void setPaymentDate(Date paymentDate){
-	this.paymentDate = paymentDate;
-    }
-    public void setIdIndividual(int idIndividual){
-	this.idIndividual = idIndividual;
-    }
-    public void setIdLegalEntity(int idLegalEntity){
-	this.idLegalEntity = idLegalEntity;
-    }
-    
-    public int getId(){
-	return id;	
-    }
-    public double getCost(){
-	return cost;	
-    }
-    public int getIdGuest(){
-	return idGuest;	
-    }
-    public Date getPaymentDate(){
-	return paymentDate;	
-    }
-    public int getIdIndividual(){
-	return idIndividual;	
-    }
-    public int getIdLegalEntity(){
-	return idLegalEntity;	
-    }  
-    
-    
+	private long id;
+	private double cost;
+	private Date paymentDate;
+	private long idGuest;
+	private long idIndividual;
+	private long idLegalEntity;
+
+	public Account() {
+	}
+
+	public Account(long id, double cost, long idGuest, Date paymentDate, long idIndividual, long idLegalEntity) {
+		this.id = id;
+		this.cost = cost;
+		this.idGuest = idGuest;
+		this.paymentDate = paymentDate;
+		this.idIndividual = idIndividual;
+		this.idLegalEntity = idLegalEntity;
+	}
+
+	public long getId(){
+	    return id;
+	}
+
+	public void setId(long id){
+	    this.id = id;
+	}
+
+	public double getCost(){
+	    return cost;
+	}
+
+	public void setCost(double cost){
+	    this.cost = cost;
+	}
+
+	public Date getPaymentDate(){
+	    return paymentDate;
+	}
+
+	public void setPaymentDate(Date paymentDate){
+	    this.paymentDate = paymentDate;
+	}
+
+	public long getIdGuest(){
+	    return idGuest;
+	}
+
+	public void setIdGuest(long idGuest){
+	    this.idGuest = idGuest;
+	}
+
+	public long getIdIndividual(){
+	    return idIndividual;
+	}
+
+	public void setIdIndividual(long idIndividual){
+	    this.idIndividual = idIndividual;
+	}
+
+	public long getIdLegalEntity(){
+	    return idLegalEntity;
+	}
+
+	public void setIdLegalEntity(long idLegalEntity){
+	    this.idLegalEntity = idLegalEntity;
+	}
+
+	
 
 }

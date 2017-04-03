@@ -1,10 +1,11 @@
-package ui_table_models;
+package hotelPomin.ui_table_models;
 
 import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import vo.GuestDetail;
+import hotelPomin.vo.GuestDetail;
+
 
 public class ClientDemoTableModel extends AbstractTableModel {
 	

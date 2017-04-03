@@ -2,64 +2,64 @@ package hotel.model;
 
 import java.sql.Date;
 
-public class Service{
-    
-    private int id;
-    private Date date;
-    private int quantity;
-    private int idGuest;
-    private int idPriceList;
+public class Service {
 
-    public Service(){
-    }
+	private long id;
+	private Date date;
+	private int quantity;
+	private long idGuest;
+	private long idPriceList;
 
-    public Service(int id, Date date, int quantity, int idGuest,
-	    int idPriceList){
-	this.id = id;
-	this.date = date;
-	this.quantity = quantity;
-	this.idGuest = idGuest;
-	this.idPriceList = idPriceList;
-    }
+	public Service() {
+	}
 
-    public int getId(){
-        return id;
-    }
+	public Service(long id, Date date, int quantity, long idGuest,
+			long idPriceList) {
+		this.id = id;
+		this.date = date;
+		this.quantity = quantity;
+		this.idGuest = idGuest;
+		this.idPriceList = idPriceList;
+	}
 
-    public void setId(int id){
-        this.id = id;
-    }
+	public long getId() {
+		return id;
+	}
 
-    public Date getDate(){
-        return date;
-    }
+	public void setId(long id) {
+		this.id = id;
+	}
 
-    public void setDate(Date date){
-        this.date = date;
-    }
+	public Date getDate() {
+		return date;
+	}
 
-    public int getQuantity(){
-        return quantity;
-    }
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
-    public void setQuantity(int quantity){
-        this.quantity = quantity;
-    }
+	public int getQuantity() {
+		return quantity;
+	}
 
-    public int getIdGuest(){
-        return idGuest;
-    }
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 
-    public void setIdGuest(int idGuest){
-        this.idGuest = idGuest;
-    }
+	public long getIdGuest() {
+		return idGuest;
+	}
 
-    public int getIdPriceList(){
-        return idPriceList;
-    }
+	public void setIdGuest(long idGuest) {
+		this.idGuest = idGuest;
+	}
 
-    public void setIdPriceList(int idPriceList){
-        this.idPriceList = idPriceList;
-    }
+	public long getIdPriceList() {
+		return idPriceList;
+	}
+
+	public void setIdPriceList(long idPriceList) {
+		this.idPriceList = idPriceList;
+	}
 
 }

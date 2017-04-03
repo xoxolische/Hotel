@@ -42,9 +42,9 @@ public class ReservationDaoImpl implements ReservationDao{
 	    else{
 		prepared_stmt.setNull(6, Types.VARCHAR);
 	    }
-	    prepared_stmt.setInt(7, reservation.getIdHotelRoom());
-	    prepared_stmt.setInt(8, reservation.getIdLegalEntity());
-	    prepared_stmt.setInt(9, reservation.getIdIndividual());
+	    prepared_stmt.setLong(7, reservation.getIdHotelRoom());
+	    prepared_stmt.setLong(8, reservation.getIdLegalEntity());
+	    prepared_stmt.setLong(9, reservation.getIdIndividual());
 	    
 	    prepared_stmt.executeUpdate();	    
 	} catch (SQLException e) {

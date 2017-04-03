@@ -1,4 +1,4 @@
-package dao;
+package hotelPomin.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import vo.GuestDetail;
-import vo.Individual;
+import hotelPomin.vo.GuestDetail;
+import hotelPomin.vo.Individual;
+
+
 
 public class GuestDAO {
 	
