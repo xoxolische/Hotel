@@ -23,7 +23,9 @@ public class OccupiedNumberTableModel extends AbstractTableModel {
 		
 		//HotelRoomDAO roomDao = new HotelRoomDAO();
 	    
-		nums = roomDao.getOccupiedNumbersDetails();
+		//nums = roomDao.getOccupiedNumbersDetails();
+	    
+	    nums = roomDao.getAllOccupiedNumbers();
 		
 	}
 

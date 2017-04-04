@@ -23,7 +23,8 @@ public class ServicesTableModel extends AbstractTableModel {
 	public ServicesTableModel() throws SQLException {
 		
 		//ServiceDAO servDao = new ServiceDAO();
-		services = servDao.getServicesFromPriceList();
+		//services = servDao.getServicesFromPriceList();
+	    services = servDao.getAllPriceListItems();
 		
 	}
 

@@ -56,7 +56,7 @@ public class ServiceDaoImpl implements ServiceDao{
 	    prepared_stmt.setInt(1, id);
 	    res = prepared_stmt.executeQuery();	    
 	    if(res.next()){
-		return getObj(res);
+		return serviceRowMapper(res);
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -73,7 +73,7 @@ public class ServiceDaoImpl implements ServiceDao{
 	    prepared_stmt = con.prepareStatement(SQL_ALL_SERVICES);
 	    res = prepared_stmt.executeQuery();
 	    while(res.next()){		
-		list.add(getObj(res));
+		list.add(serviceRowMapper(res));
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -82,7 +82,7 @@ public class ServiceDaoImpl implements ServiceDao{
 	return list;
     }
     
-    private Service getObj(ResultSet result){
+    private Service serviceRowMapper(ResultSet result){
 	Service service = new Service();
 	try {
 	    service.setId(result.getInt(1));
@@ -95,15 +95,19 @@ public class ServiceDaoImpl implements ServiceDao{
 	}
 	return service;
     }
-
-    @Override
-    public ArrayList<PriceListItem> getServicesFromPriceList(){
-	// TODO Auto-generated method stub
-	return null;
+    
+    private PriceListItem priceListRowMapper(ResultSet result){
+	PriceListItem pli = new PriceListItem();
+	try {
+	      pli.setId(result.getLo); 
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	return pli;
     }
 
     @Override
-    public ArrayList<PriceListItem> getAllPriceListItems(){
+    public ArrayList<PriceListItem> getServicesFromPriceList(int pricelist_id){
 	// TODO Auto-generated method stub
 	return null;
     }
