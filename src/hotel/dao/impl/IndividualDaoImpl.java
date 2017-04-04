@@ -11,7 +11,15 @@ import hotel.dao.IndividualDao;
 import hotel.model.Individual;
 
 public class IndividualDaoImpl implements IndividualDao{
-
+    /*** 
+     * DAO implementation 
+     * @author Pavlov Nikita 
+     * 
+     * 
+     *SQL queries 
+     * @author Lida Pinchuk 
+     */
+    
     private static final String SQL_ADD_INDIVIDUAL = "INSERT INTO individual(name, sex, phone_number) VALUES (?, ?, ?)";
     private static final String SQL_UPDATE_INDIVIDUAL = "UPDATE individual SET name=?, sex=?, phone_number=? WHERE id=?";
     private static final String SQL_DELETE_INDIVIDUAL = "DELETE FROM individual WHERE id=?";
@@ -33,7 +41,7 @@ public class IndividualDaoImpl implements IndividualDao{
 	    e.printStackTrace();
 	}
     }
-
+    
     @Override
     public void delete(int id){
 	try {
@@ -44,7 +52,7 @@ public class IndividualDaoImpl implements IndividualDao{
 	    e.printStackTrace();
 	}
     }
-
+    
     @Override
     public Individual getById(int id){
 	ResultSet res = null;
@@ -54,14 +62,14 @@ public class IndividualDaoImpl implements IndividualDao{
 	    prepared_stmt.setInt(1, id);
 	    res = prepared_stmt.executeQuery();	    
 	    if(res.next()){
-		return getObj(res);
+		return getIndividualObj(res);
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
 	return null;
     }
-
+    
     @Override
     public List<Individual> getAll(){
 	List<Individual> list = new ArrayList<Individual>();
@@ -71,7 +79,7 @@ public class IndividualDaoImpl implements IndividualDao{
 	    prepared_stmt = con.prepareStatement(SQL_ALL_INDIVIDUALS);
 	    res = prepared_stmt.executeQuery();
 	    while(res.next()){		
-		list.add(getObj(res));
+		list.add(getIndividualObj(res));
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -80,7 +88,10 @@ public class IndividualDaoImpl implements IndividualDao{
 	return list;
     }
     
-    private Individual getObj(ResultSet result){
+    /**
+     * Section below contains Object row mapper methods
+     */
+    private Individual getIndividualObj(ResultSet result){
 	Individual individual = new Individual();
 	try {
 	    individual.setId(result.getInt(1));
@@ -92,5 +103,5 @@ public class IndividualDaoImpl implements IndividualDao{
 	}
 	return individual;
     }
-
+    
 }

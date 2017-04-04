@@ -1,14 +1,15 @@
 package hotel.dao;
 
-import java.util.ArrayList;
-
 
 public interface ClientDao{
-    
+    /*** 
+     * DAO interface
+     * @author Pavlov Nikita 
+     */
     /*
     ArrayList<Client> getMovedOff();
 
     ArrayList<Client> getLivingNow();
 	
-	*/
+     */
 }

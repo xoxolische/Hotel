@@ -2,16 +2,20 @@ package hotel.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
 import hotel.dao.ClientDao;
 
 public class ClientDaoImpl implements ClientDao{
-
-    private static final String SQL_MOVEDOFF_CLIENTS = null;
-    private static final String SQL_LIVING_NOW_CLIENTS = null;
+    /*** 
+     * DAO implementation 
+     * @author Pavlov Nikita 
+     * 
+     * 
+     *SQL queries 
+     * @author Lida Pinchuk 
+     */
+    private static final String SQL_LIVING_NOW_CLIENTS = "SELECT DISTINCT * FROM individual WHERE id IN (SELECT DISTINCT id_individual FROM guest WHERE curdate() BETWEEN guest.arrival_date AND guest.departure_date);";
+    private static final String SQL_MOVEDOFF_CLIENTS = "SELECT DISTINCT * FROM individual WHERE id IN (SELECT DISTINCT id_individual FROM guest WHERE curdate() > guest.departure_date);";
     
     private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt; 
@@ -70,6 +74,6 @@ public class ClientDaoImpl implements ClientDao{
 	
 	return list;
     }
-    */
+     */
     
 }

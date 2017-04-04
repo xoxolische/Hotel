@@ -12,6 +12,14 @@ import hotel.dao.AccountDao;
 import hotel.model.Account;
 
 public class AccountDaoImpl implements AccountDao{
+    /*** 
+     * DAO implementation 
+     * @author Pavlov Nikita 
+     * 
+     * 
+     *SQL queries 
+     * @author Lida Pinchuk 
+     */
     
     private static final String SQL_ADD_ACCOUNT = "INSERT INTO account(cost, id_guest) VALUES (?, ?)";
     private static final String SQL_ADD_ACCOUNT_PAYER = "UPDATE account SET payment_date=?, id_individual=?, id_legal_entity=? WHERE id=?";
@@ -43,7 +51,7 @@ public class AccountDaoImpl implements AccountDao{
 	    e.printStackTrace();
 	}
     }
-
+    
     @Override
     public void delete(int id){
 	try {
@@ -54,7 +62,7 @@ public class AccountDaoImpl implements AccountDao{
 	    e.printStackTrace();
 	}
     }
-
+    
     @Override
     public Account getById(int id){
 	ResultSet res = null;
@@ -64,14 +72,14 @@ public class AccountDaoImpl implements AccountDao{
 	    prepared_stmt.setInt(1, id);
 	    res = prepared_stmt.executeQuery();	    
 	    if(res.next()){
-		return getObj(res);
+		return getAccountObject(res);
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
 	return null;
     }
-
+    
     @Override
     public List<Account> getAll(){
 	List<Account> list = new ArrayList<Account>();
@@ -81,7 +89,7 @@ public class AccountDaoImpl implements AccountDao{
 	    prepared_stmt = con.prepareStatement(SQL_ALL_ACCOUNTS);
 	    res = prepared_stmt.executeQuery();
 	    while(res.next()){		
-		list.add(getObj(res));
+		list.add(getAccountObject(res));
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -90,7 +98,11 @@ public class AccountDaoImpl implements AccountDao{
 	return list;
     }
     
-    private Account getObj(ResultSet result){
+    
+    /**
+     * Section below contains Object row mapper methods
+     */
+    private Account getAccountObject(ResultSet result){
 	Account account = new Account();
 	try {
 	    account.setId(result.getInt(1));

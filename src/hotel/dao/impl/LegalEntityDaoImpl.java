@@ -11,7 +11,16 @@ import hotel.dao.LegalEntityDao;
 import hotel.model.LegalEntity;
 
 public class LegalEntityDaoImpl implements LegalEntityDao{
-
+    
+    /*** 
+     * DAO implementation 
+     * @author Pavlov Nikita 
+     * 
+     * 
+     *SQL queries 
+     * @author Lida Pinchuk 
+     */
+    
     private static final String SQL_ADD_LEGALENTITY = "INSERT INTO legal_entity(name, kind_of_business, contact_name, phone_number) VALUES (?, ?, ?, ?)";
     private static final String SQL_UPDATE_LEGALENTITY = "UPDATE legal_entity SET name=?, kind_of_business=?, contact_name=?, phone_number=? WHERE id=?";
     private static final String SQL_DELETE_LEGALENTITY = "DELETE FROM legal_entity WHERE id=?";
@@ -34,7 +43,7 @@ public class LegalEntityDaoImpl implements LegalEntityDao{
 	    e.printStackTrace();
 	}
     }
-
+    
     @Override
     public void delete(int id){
 	try {
@@ -45,7 +54,7 @@ public class LegalEntityDaoImpl implements LegalEntityDao{
 	    e.printStackTrace();
 	}
     }
-
+    
     @Override
     public LegalEntity getById(int id){
 	ResultSet res = null;
@@ -55,14 +64,14 @@ public class LegalEntityDaoImpl implements LegalEntityDao{
 	    prepared_stmt.setInt(1, id);
 	    res = prepared_stmt.executeQuery();	    
 	    if(res.next()){
-		return getObj(res);
+		return getLegalEntityObject(res);
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
 	return null;
     }
-
+    
     @Override
     public List<LegalEntity> getAll(){
 	List<LegalEntity> list = new ArrayList<LegalEntity>();
@@ -72,7 +81,7 @@ public class LegalEntityDaoImpl implements LegalEntityDao{
 	    prepared_stmt = con.prepareStatement(SQL_ALL_LEGALENTITY);
 	    res = prepared_stmt.executeQuery();
 	    while(res.next()){		
-		list.add(getObj(res));
+		list.add(getLegalEntityObject(res));
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -81,7 +90,10 @@ public class LegalEntityDaoImpl implements LegalEntityDao{
 	return list;
     }
     
-    private LegalEntity getObj(ResultSet result){
+    /**
+     * Section below contains Object row mapper methods
+     */
+    private LegalEntity getLegalEntityObject(ResultSet result){
 	LegalEntity le = new LegalEntity();
 	try {
 	    le.setId(result.getInt(1));
@@ -94,5 +106,5 @@ public class LegalEntityDaoImpl implements LegalEntityDao{
 	}
 	return le;
     }
-
+    
 }

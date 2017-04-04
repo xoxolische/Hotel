@@ -11,7 +11,14 @@ import hotel.dao.PriceListDao;
 import hotel.model.PriceList;
 
 public class PriceListDaoImpl implements PriceListDao{
-
+    /*** 
+     * DAO implementation 
+     * @author Pavlov Nikita 
+     * 
+     * 
+     *SQL queries 
+     * @author Lida Pinchuk 
+     */
     private static final String SQL_ADD_PRICELIST = "INSERT INTO price_list(name, price) VALUES (?, ?)";
     private static final String SQL_UPDATE_PRICELIST = "UPDATE price_list SET name=?, price=? WHERE id=?";
     private static final String SQL_DELETE_PRICELIST = "DELETE FROM price_list WHERE id=?";
@@ -32,7 +39,7 @@ public class PriceListDaoImpl implements PriceListDao{
 	    e.printStackTrace();
 	}
     }
-
+    
     @Override
     public void delete(int id){
 	try {
@@ -43,7 +50,7 @@ public class PriceListDaoImpl implements PriceListDao{
 	    e.printStackTrace();
 	}
     }
-
+    
     @Override
     public PriceList getById(int id){
 	ResultSet res = null;
@@ -53,14 +60,14 @@ public class PriceListDaoImpl implements PriceListDao{
 	    prepared_stmt.setInt(1, id);
 	    res = prepared_stmt.executeQuery();	    
 	    if(res.next()){
-		return getObj(res);
+		return getPriceListObject(res);
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
 	return null;
     }
-
+    
     @Override
     public List<PriceList> getAll(){
 	List<PriceList> list = new ArrayList<PriceList>();
@@ -70,7 +77,7 @@ public class PriceListDaoImpl implements PriceListDao{
 	    prepared_stmt = con.prepareStatement(SQL_ALL_PRICELISTS);
 	    res = prepared_stmt.executeQuery();
 	    while(res.next()){		
-		list.add(getObj(res));
+		list.add(getPriceListObject(res));
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -79,7 +86,10 @@ public class PriceListDaoImpl implements PriceListDao{
 	return list;
     }
     
-    private PriceList getObj(ResultSet result){
+    /**
+     * Section below contains Object row mapper methods
+     */
+    private PriceList getPriceListObject(ResultSet result){
 	PriceList priceList = new PriceList();
 	try {
 	    priceList.setId(result.getInt(1));
@@ -90,6 +100,6 @@ public class PriceListDaoImpl implements PriceListDao{
 	}
 	return priceList;
     }
-
-
+    
+    
 }

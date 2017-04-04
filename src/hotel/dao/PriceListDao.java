@@ -5,7 +5,10 @@ import java.util.List;
 import hotel.model.PriceList;
 
 public interface PriceListDao{
-    
+    /*** 
+     * DAO interface
+     * @author Pavlov Nikita 
+     */
     void add(PriceList priceList);
     
     void delete(int id);

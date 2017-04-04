@@ -7,7 +7,11 @@ import hotel.model.Guest;
 import hotel.model.GuestDetail;
 
 public interface GuestDao{
-
+    
+    /*** 
+     * DAO interface
+     * @author Pavlov Nikita 
+     */
     void add(Guest guest);
     
     void delete(int id);
@@ -15,9 +19,9 @@ public interface GuestDao{
     Guest getById(int id);
     
     List<Guest> getAll();
-
-    ArrayList<GuestDetail> getAllGuestDetail();
-
-    ArrayList<GuestDetail> getGuestDetails();
-
+    
+    ArrayList<GuestDetail> getAllGuestDetail(int guest_id);
+    
+    void update(Guest guest);
+    
 }

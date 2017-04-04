@@ -12,7 +12,15 @@ import hotel.dao.ReservationDao;
 import hotel.model.Reservation;
 
 public class ReservationDaoImpl implements ReservationDao{
-
+    
+    /*** 
+     * DAO implementation 
+     * @author Pavlov Nikita 
+     * 
+     * 
+     *SQL queries 
+     * @author Lida Pinchuk 
+     */
     private static final String SQL_ADD_RESERVATION = "INSERT INTO reservation(booking_date, arrival_date, days, persons, booking_cancellation, cancellation_reason, id_hotel_room, id_legal_entity, id_individual) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String SQL_UPDATE_RESERVATION = "UPDATE reservation SET booking_date=?, arrival_date=?, days=?, persons=?, booking_cancellation=?, cancellation_reason=?, id_hotel_room=?, id_legal_entity=?, id_individual=? WHERE id=?";
     private static final String SQL_DELETE_RESERVATION = "DELETE FROM reservation WHERE id=?";
@@ -51,7 +59,7 @@ public class ReservationDaoImpl implements ReservationDao{
 	    e.printStackTrace();
 	}
     }
-
+    
     @Override
     public void delete(int id){
 	try {
@@ -62,7 +70,7 @@ public class ReservationDaoImpl implements ReservationDao{
 	    e.printStackTrace();
 	}
     }
-
+    
     @Override
     public Reservation getById(int id){
 	ResultSet res = null;
@@ -72,14 +80,14 @@ public class ReservationDaoImpl implements ReservationDao{
 	    prepared_stmt.setInt(1, id);
 	    res = prepared_stmt.executeQuery();	    
 	    if(res.next()){
-		return getObj(res);
+		return getReservationObject(res);
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	}
 	return null;
     }
-
+    
     @Override
     public List<Reservation> getAll(){
 	List<Reservation> list = new ArrayList<Reservation>();
@@ -89,7 +97,7 @@ public class ReservationDaoImpl implements ReservationDao{
 	    prepared_stmt = con.prepareStatement(SQL_ALL_RESERVATIONS);
 	    res = prepared_stmt.executeQuery();
 	    while(res.next()){		
-		list.add(getObj(res));
+		list.add(getReservationObject(res));
 	    }
 	} catch (SQLException e) {
 	    e.printStackTrace();
@@ -98,7 +106,10 @@ public class ReservationDaoImpl implements ReservationDao{
 	return list;
     }
     
-    private Reservation getObj(ResultSet result){
+    /**
+     * Section below contains Object row mapper methods
+     */
+    private Reservation getReservationObject(ResultSet result){
 	Reservation reservation = new Reservation();
 	try {
 	    reservation.setId(result.getInt(1));
@@ -116,6 +127,6 @@ public class ReservationDaoImpl implements ReservationDao{
 	}
 	return reservation;
     }
-
-
+    
+    
 }

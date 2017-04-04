@@ -7,7 +7,10 @@ import java.util.Calendar;
 import javax.swing.JFormattedTextField.AbstractFormatter;
 
 public class DateLabelFormatter extends AbstractFormatter {
-
+    /*** 
+     * Class used for a DateTimePicker plugin.
+     * @author Pavlov Nikita 
+     */
     private String datePattern = "dd-MM-yyyy";
     private SimpleDateFormat dateFormatter = new SimpleDateFormat(datePattern);
 
