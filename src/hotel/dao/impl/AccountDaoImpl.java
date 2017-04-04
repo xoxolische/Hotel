@@ -81,8 +81,8 @@ public class AccountDaoImpl implements AccountDao{
     }
     
     @Override
-    public List<Account> getAll(){
-	List<Account> list = new ArrayList<Account>();
+    public ArrayList<Account> getAll(){
+    ArrayList<Account> list = new ArrayList<Account>();
 	ResultSet res = null;
 	
 	try {

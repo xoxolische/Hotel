@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
 import hotel.dao.ServiceDao;
-import hotel.model.PriceListItem;
+import hotel.model.PriceList;
 
 
 
@@ -17,7 +17,7 @@ public class ServicesTableModel extends AbstractTableModel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private ArrayList<PriceListItem> services;
+	private ArrayList<PriceList> services;
 	private ServiceDao servDao;
 	
 	public ServicesTableModel() throws SQLException {
@@ -40,7 +40,7 @@ public class ServicesTableModel extends AbstractTableModel {
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		PriceListItem number = services.get(rowIndex);
+		PriceList number = services.get(rowIndex);
 		
 		switch (columnIndex) {
 			case 0: return number.getName(); 

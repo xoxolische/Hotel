@@ -1,6 +1,6 @@
 package hotel.dao;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import hotel.model.Account;
 
@@ -15,5 +15,5 @@ public interface AccountDao{
     
     Account getById(int id);
     
-    List<Account> getAll();
+    ArrayList<Account> getAll();
 }
