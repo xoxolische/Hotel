@@ -18,6 +18,6 @@ public interface GuestService{
     
     Guest getById(int id);
     List<Guest> getAll();
-    List<GuestDetail> getAllGuestDetail(int guest_id);
+    List<GuestDetail> getAllGuestDetail();
 
 }

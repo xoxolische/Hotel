@@ -19,7 +19,7 @@ public interface GuestDao{
     
     List<Guest> getAll();
     
-    List<GuestDetail> getAllGuestDetail(int guest_id);
+    List<GuestDetail> getAllGuestDetail();
     
     void update(Guest guest);
     

@@ -331,13 +331,12 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
     }
     
     @Override
-    public ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsLegalEntity(LegalEntity legal_entity){
+    public ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsLegalEntity(){
 	ResultSet res = null;
 	ArrayList<BookedNumberInfo> list = new ArrayList<BookedNumberInfo>();
 	
 	try {
 	    prepared_stmt = con.prepareStatement(SQL_GET_ALL_BOOKED_NUMBERS_LEGAL_ENTITY);
-	    prepared_stmt.setLong(1, legal_entity.getId());
 	    res = prepared_stmt.executeQuery();	    
 	    while(res.next()){
 		list.add(getBookedNumberInfoObject(res));

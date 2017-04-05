@@ -44,7 +44,7 @@ public interface HotelRoomDao{
     
     ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsIndividual();
     
-    ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsLegalEntity(LegalEntity legal_entity);
+    ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsLegalEntity();
     
     void update(HotelRoom hm);
     

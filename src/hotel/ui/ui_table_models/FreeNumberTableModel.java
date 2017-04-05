@@ -27,7 +27,7 @@ public class FreeNumberTableModel extends AbstractTableModel {
 		
 		//HotelRoomDAO roomDao = new HotelRoomDAO();
 	    
-		nums = hotelRoomService.getFreeNumbersDetails(date);
+		nums = hotelRoomService.getFreeNumbersDetails(new java.sql.Date(0));
 		
 	}
 

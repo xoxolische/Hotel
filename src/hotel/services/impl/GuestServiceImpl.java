@@ -43,8 +43,8 @@ public class GuestServiceImpl implements GuestService{
 	}
 
 	@Override
-	public List<GuestDetail> getAllGuestDetail(int guest_id) {
-		return guestDao.getAllGuestDetail(guest_id);
+	public List<GuestDetail> getAllGuestDetail() {
+		return guestDao.getAllGuestDetail();
 	}
 
 

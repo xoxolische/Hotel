@@ -26,7 +26,9 @@ public class GuestDaoImpl implements GuestDao{
     private static final String SQL_DELETE_GUEST = "DELETE FROM guest WHERE id=?";
     private static final String SQL_GET_BY_ID_GUEST = "SELECT * FROM guest WHERE id=?";
     private static final String SQL_ALL_GUESTS = "SELECT * FROM guest";
-    private static final String SQL_ALL_GUEST_DETAIL = "SELECT * FROM guest INNER JOIN individual ON guest.id_individual=individual.id INNER JOIN hotel_room ON guest.id_hotel_room=hotel_room.id WHERE guest.id=?;";
+    private static final String SQL_ALL_GUEST_DETAIL = "SELECT * FROM guest INNER JOIN individual ON guest.id_individual=individual.id INNER JOIN hotel_room ON guest.id_hotel_room=hotel_room.id";
+    private static final String SQL_ALL_GUEST_DETAIL_BY_ID = " WHERE guest.id=?";
+    
     //private static final String SQL_MOVEDOFF_GUESTS = null;
     
     private Connection con = ConnectionFactory.cf.getConnection();
@@ -112,13 +114,12 @@ public class GuestDaoImpl implements GuestDao{
     }
     
     @Override
-    public List<GuestDetail> getAllGuestDetail(int guest_id){
+    public List<GuestDetail> getAllGuestDetail(){
 	ResultSet res = null;
 	List<GuestDetail> list = new ArrayList<GuestDetail>();
 	
 	try {
 	    prepared_stmt = con.prepareStatement(SQL_ALL_GUEST_DETAIL);
-	    prepared_stmt.setInt(1, guest_id);
 	    res = prepared_stmt.executeQuery();	    
 	    while(res.next()){
 		list.add(getGuestDetailObject(res));

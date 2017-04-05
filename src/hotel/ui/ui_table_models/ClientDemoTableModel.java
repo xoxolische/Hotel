@@ -1,10 +1,11 @@
 package hotel.ui.ui_table_models;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
 import hotel.dao.GuestDao;
+import hotel.dao.impl.GuestDaoImpl;
 import hotel.model.GuestDetail;
 
 
@@ -14,8 +15,8 @@ public class ClientDemoTableModel extends AbstractTableModel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private ArrayList<GuestDetail> guests;
-	private GuestDao guestDao;
+	private List<GuestDetail> guests;
+	private GuestDao guestDao = new GuestDaoImpl();
 	
 	public ClientDemoTableModel() {
 	    

@@ -1,11 +1,12 @@
 package hotel.ui.ui_table_models;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
 import hotel.dao.ServiceDao;
+import hotel.dao.impl.ServiceDaoImpl;
 import hotel.model.PriceList;
 
 
@@ -17,13 +18,14 @@ public class ServicesTableModel extends AbstractTableModel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private ArrayList<PriceList> services;
-	private ServiceDao servDao;
+	private List<PriceList> services;
+	private ServiceDao servDao = new ServiceDaoImpl();
 	
 	public ServicesTableModel() throws SQLException {
 		
 		//ServiceDAO servDao = new ServiceDAO();
 		//services = servDao.getServicesFromPriceList();
+	    //cant do dis sry
 	    services = servDao.getAllPriceListItems();
 		
 	}
