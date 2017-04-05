@@ -1,7 +1,20 @@
 package hotel.services;
 
+import java.util.List;
+
+import hotel.model.Individual;
+
+/*** 
+ * Service interface
+ * @author Lida Pinchuk
+ */
+
 public interface IndividualService{
 
-    void add(String name, String sex, String phone);
+    void add(Individual individual);
+    void delete(int id);
+    
+    Individual getById(int id);
+    List<Individual> getAll();
 
 }

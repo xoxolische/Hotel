@@ -1,32 +1,39 @@
 package hotel.services.impl;
 
-import java.sql.Date;
+import java.util.List;
 
-import hotel.dao.HotelRoomDao;
 import hotel.dao.ReservationDao;
-import hotel.dao.impl.HotelRoomDaoImpl;
 import hotel.dao.impl.ReservationDaoImpl;
 import hotel.model.Reservation;
 import hotel.services.ReservationService;
 
+/*** 
+ * Service implementation
+ * @author Lida Pinchuk 
+ */
+
 public class ReservationServiceImpl implements ReservationService{
 
-    @Override
-    public void createReservation(int no, Date dateF, Date dateE){
-	ReservationDao reservationDao = new ReservationDaoImpl();
-	HotelRoomDao hotelRoomDao = new HotelRoomDaoImpl();
-		
-	Reservation reservation = new Reservation();
-	reservation.setBookingDate(dateF);
-	reservation.setArrivalDate(dateE);
-	reservation.setIdHotelRoom(hotelRoomDao.getByNumber(no).getId());
+	private static ReservationDao reservationDao = new ReservationDaoImpl();
 	
-	reservation.setDays(1);
-	reservation.setPersons(1);
-	reservation.setIdIndividual(1);
-	reservation.setIdLegalEntity(1);
-	
-	reservationDao.add(reservation);
-    }
+	@Override
+	public void add(Reservation reservation) {
+		reservationDao.add(reservation);
+	}
+
+	@Override
+	public void delete(int id) {
+		reservationDao.delete(id);
+	}
+
+	@Override
+	public Reservation getById(int id) {
+		return reservationDao.getById(id);
+	}
+
+	@Override
+	public List<Reservation> getAll() {
+		return reservationDao.getAll();
+	}
 
 }

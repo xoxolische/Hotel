@@ -21,6 +21,8 @@ import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import hotel.ui.ui_table_models.BookedNumberTableModel;
+import hotel.ui.ui_table_models.OccupiedNumberTableModel;
 import hotelPomin.ui_table_models.ClientDemoTableModel;
 
 
@@ -311,12 +313,12 @@ public class MainWindow extends JFrame {
 		//---
 		
 		//Заповнення таблиці from Database
-		/*try {
+		try {
 			OccupiedNumberTableModel occNumsModel = new OccupiedNumberTableModel();
 			occNumsTable.setModel(occNumsModel);
 		} catch (SQLException e1) {
 			e1.printStackTrace();
-		}*/
+		}
 		
 		occNumsScroll.setPreferredSize(occNumsScroll.getPreferredSize());
 		occNumsPn.add(occNumsScroll);		
@@ -339,12 +341,12 @@ public class MainWindow extends JFrame {
 		//---
 		
 		//Заповнення таблиці from Database
-		/*try {
+		try {
 			BookedNumberTableModel bookNumsModel = new BookedNumberTableModel();
 			bookedNumsTable.setModel(bookNumsModel);
 		} catch (SQLException e1) {
 			e1.printStackTrace();
-		}*/
+		}
 		
 		bookedNumsScroll.setPreferredSize(bookedNumsScroll.getPreferredSize());
 		bookedNumsPn.add(bookedNumsScroll);

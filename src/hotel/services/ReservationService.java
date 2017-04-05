@@ -1,10 +1,20 @@
 package hotel.services;
 
-import java.sql.Date;
+import java.util.List;
 
+import hotel.model.Reservation;
+
+/*** 
+ * Service interface
+ * @author Lida Pinchuk
+ */
 
 public interface ReservationService{
 
-    void createReservation(int no, Date date, Date date2);
+    void add(Reservation reservation);
+    void delete(int id);
+    
+    Reservation getById(int id);
+    List<Reservation> getAll();
 
 }

@@ -1,6 +1,5 @@
 package hotel.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import hotel.model.Guest;
@@ -20,7 +19,7 @@ public interface GuestDao{
     
     List<Guest> getAll();
     
-    ArrayList<GuestDetail> getAllGuestDetail(int guest_id);
+    List<GuestDetail> getAllGuestDetail(int guest_id);
     
     void update(Guest guest);
     

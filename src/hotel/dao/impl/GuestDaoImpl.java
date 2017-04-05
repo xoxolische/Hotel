@@ -112,9 +112,9 @@ public class GuestDaoImpl implements GuestDao{
     }
     
     @Override
-    public ArrayList<GuestDetail> getAllGuestDetail(int guest_id){
+    public List<GuestDetail> getAllGuestDetail(int guest_id){
 	ResultSet res = null;
-	ArrayList<GuestDetail> list = new ArrayList<GuestDetail>();
+	List<GuestDetail> list = new ArrayList<GuestDetail>();
 	
 	try {
 	    prepared_stmt = con.prepareStatement(SQL_ALL_GUEST_DETAIL);

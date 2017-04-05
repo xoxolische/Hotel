@@ -2,11 +2,15 @@ package hotel.ui.ui_table_models;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.swing.table.AbstractTableModel;
 
 import hotel.dao.HotelRoomDao;
 import hotel.model.HotelRoom;
+import hotel.services.HotelRoomService;
+import hotel.services.impl.HotelRoomServiceImpl;
 
 
 public class FreeNumberTableModel extends AbstractTableModel {
@@ -16,13 +20,14 @@ public class FreeNumberTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private ArrayList<HotelRoom> nums;
-	private HotelRoomDao roomDao;
+	
+	private HotelRoomService hotelRoomService = new HotelRoomServiceImpl();
 	
 	public FreeNumberTableModel() throws SQLException {
 		
 		//HotelRoomDAO roomDao = new HotelRoomDAO();
 	    
-		nums = roomDao.getFreeNumbersDetails();
+		nums = hotelRoomService.getFreeNumbersDetails(date);
 		
 	}
 

@@ -6,13 +6,9 @@ import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
 import hotel.dao.HotelRoomDao;
-import hotel.dao.impl.HotelRoomDaoImpl;
 import hotel.model.BookedNumberInfo;
-
-
-
-
-
+import hotel.services.HotelRoomService;
+import hotel.services.impl.HotelRoomServiceImpl;
 
 /***
  * 
@@ -32,7 +28,9 @@ public class BookedNumberTableModel extends AbstractTableModel {
     private ArrayList <BookedNumberInfo> numsLegalEntity;
     
     private ArrayList<BookedNumberInfo> nums;
-    private HotelRoomDao roomDao;
+    
+    private HotelRoomService hotelRoomService = new HotelRoomServiceImpl();
+    
     public BookedNumberTableModel() throws SQLException {
 	//Service must be called instead of direct call of dao.
 	/*
@@ -42,8 +40,8 @@ public class BookedNumberTableModel extends AbstractTableModel {
 	 */
 	
 	
-	numsIndividual = roomDao.getAllBookedNumbersDetailsIndividual();
-	numsLegalEntity = roomDao.getAllBookedNumbersDetailsLegalEntity();
+	numsIndividual = hotelRoomService.getAllBookedNumbersDetailsIndividual();
+	numsLegalEntity = hotelRoomService.getAllBookedNumbersDetailsLegalEntity();
 	
 	//numsIndividual = roomDao.getBookedNumbersDetailsIndividal();
 	//numsLegalEntity = roomDao.getBookedNumbersDetailsLegalEntity();
