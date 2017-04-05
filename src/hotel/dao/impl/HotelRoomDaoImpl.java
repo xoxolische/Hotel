@@ -12,6 +12,7 @@ import hotel.dao.HotelRoomDao;
 import hotel.model.BookedNumberInfo;
 import hotel.model.Guest;
 import hotel.model.HotelRoom;
+import hotel.model.LegalEntity;
 import hotel.model.OccupiedNumberInfo;
 
 public class HotelRoomDaoImpl implements HotelRoomDao{
@@ -54,6 +55,12 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
     private static final String SQL_GET_BOOKED_HOTEL_ROOM_DETAIS = "SELECT * FROM hotel_room WHERE id IN (SELECT id_hotel_room FROM reservation WHERE ? BETWEEN reservation.arrival_date AND ADDDATE(reservation.arrival_date, reservation.days-1)) OR id IN (SELECT id_hotel_room FROM guest WHERE ? BETWEEN guest.arrival_date AND guest.departure_date-1)";
     
     private static final String SQL_GET_OCCUPIED_HOTEL_ROOM_DETAIS = "SELECT * FROM guest INNER JOIN hotel_room ON guest.id_hotel_room=hotel_room.id INNER JOIN individual ON guest.id_individual=individual.id WHERE guest.id_individual=?;";
+    
+    private static final String SQL_GET_OCCUPIED_HOTEL_ROOMS = "";
+
+    private static final String SQL_GET_BOOKED_NUMBER_INFO = "";
+
+    private static final String SQL_GET_ALL_BOOKED_NUMBERS_LEGAL_ENTITY = null;
     
     private Connection con = ConnectionFactory.cf.getConnection();
     private PreparedStatement prepared_stmt; 
@@ -291,20 +298,54 @@ public class HotelRoomDaoImpl implements HotelRoomDao{
     
     @Override
     public ArrayList<OccupiedNumberInfo> getAllOccupiedNumbers(){
-	// TODO Auto-generated method stub
-	return null;
+	ResultSet res = null;
+	ArrayList<OccupiedNumberInfo> list = new ArrayList<OccupiedNumberInfo>();
+	
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_GET_OCCUPIED_HOTEL_ROOMS);
+	    res = prepared_stmt.executeQuery();	    
+	    while(res.next()){
+		list.add(getOccupiedNumberInfoObject(res));
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	return list;
     }
     
     @Override
     public ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsIndividual(){
-	// TODO Auto-generated method stub
-	return null;
+	ResultSet res = null;
+	ArrayList<BookedNumberInfo> list = new ArrayList<BookedNumberInfo>();
+	
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_GET_BOOKED_NUMBER_INFO);
+	    res = prepared_stmt.executeQuery();	    
+	    while(res.next()){
+		list.add(getBookedNumberInfoObject(res));
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	return list;
     }
     
     @Override
-    public ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsLegalEntity(){
-	// TODO Auto-generated method stub
-	return null;
+    public ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsLegalEntity(LegalEntity legal_entity){
+	ResultSet res = null;
+	ArrayList<BookedNumberInfo> list = new ArrayList<BookedNumberInfo>();
+	
+	try {
+	    prepared_stmt = con.prepareStatement(SQL_GET_ALL_BOOKED_NUMBERS_LEGAL_ENTITY);
+	    prepared_stmt.setLong(1, legal_entity.getId());
+	    res = prepared_stmt.executeQuery();	    
+	    while(res.next()){
+		list.add(getBookedNumberInfoObject(res));
+	    }
+	} catch (SQLException e) {
+	    e.printStackTrace();
+	}
+	return list;
     }
     
     /**

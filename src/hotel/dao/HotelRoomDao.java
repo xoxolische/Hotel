@@ -7,6 +7,7 @@ import java.util.List;
 import hotel.model.BookedNumberInfo;
 import hotel.model.Guest;
 import hotel.model.HotelRoom;
+import hotel.model.LegalEntity;
 import hotel.model.OccupiedNumberInfo;
 
 
@@ -43,7 +44,7 @@ public interface HotelRoomDao{
     
     ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsIndividual();
     
-    ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsLegalEntity();
+    ArrayList<BookedNumberInfo> getAllBookedNumbersDetailsLegalEntity(LegalEntity legal_entity);
     
     void update(HotelRoom hm);
     
